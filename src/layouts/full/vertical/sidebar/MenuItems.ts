@@ -14,7 +14,7 @@ interface MenuitemsType {
   variant?: string;
   external?: boolean;
 }
-import { IconAperture, IconPlus, IconList } from "@tabler/icons-react";
+import { IconAperture, IconPlus, IconList, IconCalendarDue } from "@tabler/icons-react";
 
 const Menuitems: MenuitemsType[] = [
   {
@@ -54,6 +54,16 @@ const Menuitems: MenuitemsType[] = [
     title: "Create Proceedings",
     icon: IconPlus,
     href: "/proceedings",
+  },
+  {
+    navlabel: true,
+    subheader: "Books",
+  },
+  {
+    id: uniqueId(),
+    title: "Calendar",
+    icon: IconCalendarDue,
+    href: "/bookings/calendar",
   },
 ];
 

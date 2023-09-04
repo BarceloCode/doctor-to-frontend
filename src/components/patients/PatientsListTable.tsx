@@ -31,8 +31,8 @@ const PatientsListTable = ({ patients }: any) => {
   };
   const onDeletePattient = async (id: any) => {
     const response = await deletePatient(id);
-    if (response?.response.status == 200) {
-      // console.log(response);
+    if (response?.response?.status == 200) {
+      console.log(response, "response");
       dispatch(setLoadder(false));
       dispatch(
         setToast({
@@ -47,7 +47,7 @@ const PatientsListTable = ({ patients }: any) => {
         setToast({
           active: true,
           type: "error",
-          msj: response?.response.data.message,
+          msj: response?.data?.message,
         })
       );
     }
@@ -84,11 +84,6 @@ const PatientsListTable = ({ patients }: any) => {
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
                   {t(`Adress`)}
-                </Typography>
-              </TableCell>
-              <TableCell align="center">
-                <Typography variant="subtitle2" fontWeight={600}>
-                  {t(`Budget`)}
                 </Typography>
               </TableCell>
               <TableCell>
@@ -162,17 +157,6 @@ const PatientsListTable = ({ patients }: any) => {
                         fontWeight={400}
                       >
                         {pattient?.address}
-                      </Typography>
-                    </TableCell>
-                    <TableCell
-                      align="center"
-                      onClick={() => {
-                        setOpenProfile(true);
-                        setSelectedPatient(pattient);
-                      }}
-                    >
-                      <Typography variant="h6">
-                        ${pattient?.budget}33,000MXN
                       </Typography>
                     </TableCell>
                     <TableCell>

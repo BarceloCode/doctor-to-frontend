@@ -12,7 +12,7 @@ import {
 import React, { useEffect, useMemo } from "react";
 
 const PattientProfile = ({
-  openProfile,
+  openProfile = false,
   setOpenProfile,
   selectedPattient,
 }: any) => {

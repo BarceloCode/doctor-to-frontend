@@ -56,7 +56,7 @@ export const updatePatient = async (
   };
   try {
     const response = await axios.put(
-      `${API}/usc/patient/update/:${idPatient}`,
+      `${API}/usc/patient/update/${idPatient}`,
       patient,
       config
     );
@@ -86,7 +86,7 @@ export const deletePatient = async (idPatient: any) => {
   };
   try {
     const response = await axios.delete(
-      `${API}/usc/patient/update/:${idPatient}`,
+      `${API}/usc/patient/delete/${idPatient}`,
       config
     );
     return response;
