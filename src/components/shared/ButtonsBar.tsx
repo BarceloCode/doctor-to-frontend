@@ -21,7 +21,7 @@ const ButtonsBar = () => {
   const urlCatalog: any = [
     "/patients/list",
     "/patients/register",
-    "/proceedings/list",
+    "/expedients/list",
     "/bookings/calendar",
   ];
 
@@ -107,14 +107,14 @@ const ButtonsBar = () => {
                 color: "white",
               }}
               component={Link}
-              href="/proceedings/list"
+              href="/expedients/list"
               label="Expedients"
               icon={<FeedIcon />}
             />
           ) : (
             <BottomNavigationAction
               component={Link}
-              href="/proceedings/list"
+              href="/expedients/list"
               label="Expedients"
               icon={<FeedIcon />}
             />

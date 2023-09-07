@@ -8,8 +8,8 @@ import ButtonsBar from "src/components/shared/ButtonsBar";
 
 const index = () => {
   return (
-    <PageContainer title="Patients" description="List of all Patients">
-      <Breadcrumb title="Patients" items={BCrumProceedings} />
+    <PageContainer title="Expedient" description="Expedient Form">
+      <Breadcrumb title="Expedient" items={BCrumProceedings} />
       <DashboardCard title="Create Proceedings">
         <div>
           <ProceedingsForm />

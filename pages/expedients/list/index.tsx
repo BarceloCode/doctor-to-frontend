@@ -49,35 +49,35 @@ const index = () => {
     };
   }, []);
 
-//   useEffect(() => {
-//     // console.clear();
-//     const foundItems: Array<any> = [];
-//     patients?.find((patient: any) => {
-//       // console.log(
-//       //   patient,
-//       //   "patient",
-//       //   patient?.name?.includes(searched),
-//       //   patient?.phone?.includes(searched)
-//       // );
+  //   useEffect(() => {
+  //     // console.clear();
+  //     const foundItems: Array<any> = [];
+  //     patients?.find((patient: any) => {
+  //       // console.log(
+  //       //   patient,
+  //       //   "patient",
+  //       //   patient?.name?.includes(searched),
+  //       //   patient?.phone?.includes(searched)
+  //       // );
 
-//       if (
-//         patient?.name?.toLowerCase().includes(searched) ||
-//         (patient?.phone?.toLowerCase().includes(searched) &&
-//           !foundItems?.includes(patient))
-//       ) {
-//         foundItems.push(patient);
-//       }
-//     });
-//     setPatientsFiltered(foundItems);
-//   }, [searched]);
+  //       if (
+  //         patient?.name?.toLowerCase().includes(searched) ||
+  //         (patient?.phone?.toLowerCase().includes(searched) &&
+  //           !foundItems?.includes(patient))
+  //       ) {
+  //         foundItems.push(patient);
+  //       }
+  //     });
+  //     setPatientsFiltered(foundItems);
+  //   }, [searched]);
   return (
     <>
       <PageContainer
-        title={t(`${"Patients"}`) as string}
-        description="List of all Proceedings"
+        title={t(`${"Expedient"}`) as string}
+        description="List of all Expedients"
       >
-        <Breadcrumb title="Proceedings" items={BCrumPatients} />
-        <DashboardCard title="Proceedings List">
+        <Breadcrumb title="Expedients" items={BCrumPatients} />
+        <DashboardCard title="Expedients List">
           <>
             <ProceedingsListTable proceedings={proceedings} />
             {/* <PatientsListTable patients={patients} /> */}

@@ -52,7 +52,7 @@ const Menuitems: MenuitemsType[] = [
   },
   {
     navlabel: true,
-    subheader: "Proceedings",
+    subheader: "Expedients",
   },
   // {
   //   id: uniqueId(),
@@ -62,9 +62,9 @@ const Menuitems: MenuitemsType[] = [
   // },
   {
     id: uniqueId(),
-    title: "Proceedings List",
+    title: "Expedients List",
     icon: IconList,
-    href: "/proceedings/list",
+    href: "/expedients/list",
   },
   {
     navlabel: true,
