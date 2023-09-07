@@ -24,7 +24,7 @@ const ContactInformation = ({
           name="email"
           onChange={handleChange}
           onBlur={handleBlur}
-          // value={values.email}
+          value={values?.email}
           id="email-text"
           variant="outlined"
           fullWidth
@@ -39,7 +39,7 @@ const ContactInformation = ({
           name="phone"
           onChange={handleChange}
           onBlur={handleBlur}
-          // value={values.phone}
+          value={values?.phone}
           id="phone-text"
           variant="outlined"
           fullWidth
@@ -53,7 +53,7 @@ const ContactInformation = ({
           name="emergencyContact"
           onChange={handleChange}
           onBlur={handleBlur}
-          // value={values.emergencyPhone}
+          value={values?.emergencyPhone}
           id="emergencyContact-text"
           variant="outlined"
           fullWidth

@@ -50,7 +50,7 @@ const AddressInformation = ({
             name="street"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.street}
+            value={values?.street}
             id="street-text"
             variant="outlined"
             fullWidth
@@ -70,7 +70,7 @@ const AddressInformation = ({
             name="city"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.city}
+            value={values?.city}
             id="city-text"
             variant="outlined"
             fullWidth
@@ -90,7 +90,7 @@ const AddressInformation = ({
             name="state"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.state}
+            value={values?.state}
             id="state-text"
             variant="outlined"
             fullWidth
@@ -110,7 +110,7 @@ const AddressInformation = ({
             name="zipCode"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.postalCode}
+            value={values?.postalCode}
             id="zipCode-text"
             variant="outlined"
             fullWidth
@@ -130,7 +130,7 @@ const AddressInformation = ({
             name="country"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.country}
+            value={values?.country}
             id="country-select"
             fullWidth
             variant="outlined"

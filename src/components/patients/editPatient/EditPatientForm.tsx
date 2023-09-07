@@ -9,33 +9,43 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { setLoadder, setToast } from "src/store/customizer/CustomizerSlice";
 
-const EditPatientForm = ({ setOpen, idPattient }: any) => {
+const EditPatientForm = ({
+  setOpen,
+  idPattient,
+  selectedPattient = false,
+}: any) => {
   const router = useRouter();
   const dispatch = useDispatch();
+  // console.log(selectedPattient, "selectedPattient");
+
   return (
     <Formik
-      initialValues={{
-        email: "",
-        phone: "",
-        emergencyContact: "",
+      initialValues={
+        selectedPattient
+          ? selectedPattient
+          : {
+              email: "",
+              phone: "",
+              emergencyContact: "",
 
-        street: "",
-        city: "",
-        state: "",
-        zipCode: "",
-        country: "mx",
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "mx",
 
-        name: "",
-        lastName: "",
-        gender: "male",
-        religion: "",
-        birthdate: Date,
-        civilstatus: "single",
-        ocupation: "",
-        bloodType: "",
-        age: "",
-        curp: "",
-      }}
+              name: "",
+              lastName: "",
+              gender: "male",
+              religion: "",
+              birthdate: Date,
+              civilstatus: "single",
+              ocupation: "",
+              bloodType: "",
+              age: "",
+              curp: "",
+            }
+      }
       validate={(values: any) => {
         // const errors = {};
         // if (!values.email) {
@@ -67,7 +77,7 @@ const EditPatientForm = ({ setOpen, idPattient }: any) => {
         };
         // notifySuccess();
         console.log("hola");
-        
+
         updatePatient(patient, idPattient).then(function (response) {
           if (response?.success) {
             // console.log(response);
@@ -110,6 +120,8 @@ const EditPatientForm = ({ setOpen, idPattient }: any) => {
         /* and other goodies */
       }) => (
         <form>
+          {/* {idPattient}
+          {pattient.name} */}
           <PersonalIformation
             values={values}
             errors={errors}

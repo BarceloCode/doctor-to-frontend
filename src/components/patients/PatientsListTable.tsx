@@ -24,9 +24,12 @@ const PatientsListTable = ({ patients }: any) => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
+  // const [pattientID, setPattientID] = useState(false);
   const [selectedPattient, setSelectedPatient] = useState(false);
-  const onEditPattient = () => {
+  const onEditPattient = (pattient: any) => {
     setOpen(true);
+    setSelectedPatient(pattient);
+    // setPattientID(patientId);
     // console.log("on edit");
   };
   const onDeletePattient = async (id: any) => {
@@ -172,17 +175,24 @@ const PatientsListTable = ({ patients }: any) => {
                     </TableCell>
                     <TableCell>
                       <Actions
+                        pattient={pattient}
+                        setSelectedPatient={setSelectedPatient}
                         onEditPattient={onEditPattient}
                         onDeletePattient={onDeletePattient}
                         patientId={pattient?._id}
                       />
                     </TableCell>
                   </TableRow>
-                  <EditPatient
-                    idPattient={pattient?._id}
-                    open={open}
-                    setOpen={setOpen}
-                  />
+                  {open && (
+                    <EditPatient
+                      // key={index}
+                      selectedPattient={selectedPattient}
+                      // pattient={pattient}
+                      idPattient={pattient?._id}
+                      open={open}
+                      setOpen={setOpen}
+                    />
+                  )}
                 </React.Fragment>
               ))}
             {openProfile && (

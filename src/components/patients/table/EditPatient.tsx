@@ -2,7 +2,7 @@ import { Box, Modal, Typography } from "@mui/material";
 import React from "react";
 import EditPatientForm from "../editPatient/EditPatientForm";
 
-const EditPatient = ({ open, setOpen, idPattient }: any) => {
+const EditPatient = ({ open, setOpen, idPattient, selectedPattient }: any) => {
   const style = {
     // position: "relative" as "relative",
     // top: "50%",
@@ -17,6 +17,8 @@ const EditPatient = ({ open, setOpen, idPattient }: any) => {
     overflow: "auto",
     p: 4,
   };
+  // console.log(selectedPattient, "selectedPattient acaaa");
+  
   return (
     <Modal
       open={open}
@@ -25,7 +27,11 @@ const EditPatient = ({ open, setOpen, idPattient }: any) => {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <EditPatientForm idPattient={idPattient} setOpen={setOpen}  />
+        <EditPatientForm
+          selectedPattient={selectedPattient}
+          idPattient={idPattient}
+          setOpen={setOpen}
+        />
       </Box>
     </Modal>
   );
