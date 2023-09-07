@@ -20,6 +20,7 @@ const index = () => {
   const [patientsFiltered, setPatientsFiltered]: any = useState([]);
   const [loadding, setLoadding]: any = useState(false);
   const dispatch = useDispatch();
+  
 
   // const fetchApi = () => {
   //   // if (isSubscribed) {

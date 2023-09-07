@@ -14,16 +14,16 @@ const AddressInformation = ({
 }: any) => {
   const countries = [
     {
-      value: "mx",
+      value: "Mexico",
       label: "Mexico",
     },
     {
-      value: "us",
+      value: "United states",
       label: "United states",
     },
     {
-      value: "canada",
-      label: "canada",
+      value: "Canada",
+      label: "Canada",
     },
   ];
 
@@ -50,7 +50,7 @@ const AddressInformation = ({
             name="street"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values?.street}
+            value={values?.address}
             id="street-text"
             variant="outlined"
             fullWidth
@@ -110,7 +110,7 @@ const AddressInformation = ({
             name="zipCode"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values?.postalCode}
+            value={values?.zipcode}
             id="zipCode-text"
             variant="outlined"
             fullWidth

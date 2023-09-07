@@ -14,33 +14,33 @@ const PersonalIformation = ({
   const { t } = useTranslation();
   const genders = [
     {
-      value: "female",
+      value: "Female",
       label: "Female",
     },
     {
-      value: "male",
+      value: "Male",
       label: "Male",
     },
     {
-      value: "other",
+      value: "Other",
       label: "Other",
     },
   ];
   const maritalStus = [
     {
-      value: "single",
+      value: "Singles",
       label: "Singles",
     },
     {
-      value: "married",
+      value: "Married",
       label: "Married",
     },
     {
-      value: "widower",
+      value: "Widower",
       label: "Widower",
     },
     {
-      value: "free-Union",
+      value: "Free-Union",
       label: "Free Union",
     },
     {
@@ -50,7 +50,7 @@ const PersonalIformation = ({
   ];
   // console.clear();
   // console.log(values, "values");
-  
+
   return (
     <div>
       {/* {values.name}
@@ -142,7 +142,7 @@ const PersonalIformation = ({
             name="lastName"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values?.lastName}
+            value={values?.surname}
             id="lastName-text"
             variant="outlined"
             fullWidth
@@ -150,13 +150,12 @@ const PersonalIformation = ({
           <CustomFormLabel htmlFor="birthdate">
             {t(`Date of Birth`)}
           </CustomFormLabel>
-
           <CustomTextField
             type="date"
             name="birthdate"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values?.datheOfBirth}
+            value={values?.birthdate}
             id="birthdate"
             variant="outlined"
             fullWidth

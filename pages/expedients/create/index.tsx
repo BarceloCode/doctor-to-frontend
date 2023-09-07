@@ -5,8 +5,12 @@ import { BCrumProceedings } from "src/utils/BCrumProceedings";
 import DashboardCard from "src/components/shared/DashboardCard";
 import ProceedingsForm from "src/components/proceedings/ProceedingsForm";
 import ButtonsBar from "src/components/shared/ButtonsBar";
+import { useSearchParams } from "next/navigation";
 
 const index = () => {
+  const searchParams = useSearchParams();
+  const idPatient = searchParams.get("id");
+
   return (
     <PageContainer title="Expedient" description="Expedient Form">
       <Breadcrumb title="Expedient" items={BCrumProceedings} />
