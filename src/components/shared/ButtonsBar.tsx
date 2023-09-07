@@ -5,6 +5,7 @@ import {
   Fab,
   Paper,
 } from "@mui/material";
+import Link from "next/link";
 import AddIcon from "@mui/icons-material/Add";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
@@ -38,16 +39,33 @@ const ButtonsBar = () => {
           // }}
         >
           <BottomNavigationAction
+            // component={Link}
+            // href="/patients/register"
             label="Book Apointment"
             icon={<EventAvailableIcon />}
           />
-          <BottomNavigationAction label="Add Patient" icon={<AddIcon />} />
+
           <BottomNavigationAction
+            component={Link}
+            href="/patients/register"
+            label="Add Patient"
+            icon={<AddIcon />}
+          />
+          <BottomNavigationAction
+            component={Link}
+            href="/bookings/calendar"
             label="Calendar"
             icon={<CalendarMonthIcon />}
           />
-          <BottomNavigationAction label="Expedient" icon={<FeedIcon />} />
           <BottomNavigationAction
+            // component={Link}
+            // href="/patients/register"
+            label="Expedients"
+            icon={<FeedIcon />}
+          />
+          <BottomNavigationAction
+            // component={Link}
+            // href="/patients/register"
             label="Cash register"
             icon={<MonetizationOnIcon />}
           />

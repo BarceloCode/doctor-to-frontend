@@ -14,7 +14,12 @@ interface MenuitemsType {
   variant?: string;
   external?: boolean;
 }
-import { IconAperture, IconPlus, IconList, IconCalendarDue } from "@tabler/icons-react";
+import {
+  IconAperture,
+  IconPlus,
+  IconList,
+  IconCalendarDue,
+} from "@tabler/icons-react";
 
 const Menuitems: MenuitemsType[] = [
   {
@@ -49,11 +54,17 @@ const Menuitems: MenuitemsType[] = [
     navlabel: true,
     subheader: "Proceedings",
   },
+  // {
+  //   id: uniqueId(),
+  //   title: "Create Proceedings",
+  //   icon: IconPlus,
+  //   href: "/proceedings",
+  // },
   {
     id: uniqueId(),
-    title: "Create Proceedings",
+    title: "Proceedings List",
     icon: IconPlus,
-    href: "/proceedings",
+    href: "/proceedings/list",
   },
   {
     navlabel: true,
