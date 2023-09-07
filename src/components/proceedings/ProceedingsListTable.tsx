@@ -15,7 +15,7 @@ import { setLoadder, setToast } from "src/store/customizer/CustomizerSlice";
 import { useDispatch } from "react-redux";
 import React from "react";
 
-const ProceedingsListTable = ({ patients }: any) => {
+const ProceedingsListTable = ({ proceedings }: any) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
@@ -42,36 +42,31 @@ const ProceedingsListTable = ({ patients }: any) => {
               </TableCell>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  {t(`Phone`)}
+                  {t(`Consult Reason`)}
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  {t(`Adress`)}
+                  {t(`Adictions`)}
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  {t(`Status`)}
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography variant="subtitle2" fontWeight={600}>
-                  {t(`Actions`)}
+                  {/* {t(`Actions`)} */}
                 </Typography>
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {patients?.length > 0 &&
-              patients?.map((pattient: any, index: number) => (
+            {proceedings?.length > 0 &&
+              proceedings?.map((proceeding: any, index: number) => (
                 <React.Fragment key={index}>
                   <TableRow sx={{ cursor: "pointer" }}>
                     <TableCell
-                      onClick={() => {
-                        setOpenProfile(true);
-                        setSelectedPatient(pattient);
-                      }}
+                    // onClick={() => {
+                    //   setOpenProfile(true);
+                    //   setSelectedPatient(proceeding);
+                    // }}
                     >
                       <Typography
                         sx={{
@@ -79,14 +74,14 @@ const ProceedingsListTable = ({ patients }: any) => {
                           fontWeight: "500",
                         }}
                       >
-                        {pattient?.name}
+                        {proceeding?.patient?.name}
                       </Typography>
                     </TableCell>
                     <TableCell
-                      onClick={() => {
-                        setOpenProfile(true);
-                        setSelectedPatient(pattient);
-                      }}
+                    // onClick={() => {
+                    //   setOpenProfile(true);
+                    //   setSelectedPatient(proceeding);
+                    // }}
                     >
                       <Box
                         sx={{
@@ -96,43 +91,34 @@ const ProceedingsListTable = ({ patients }: any) => {
                       >
                         <Box>
                           <Typography variant="subtitle2" fontWeight={600}>
-                            {pattient?.phone}
+                            {proceeding?.consultReason?.motive}
                           </Typography>
-                          <Typography
+                          {/* <Typography
                             color="textSecondary"
                             sx={{
                               fontSize: "13px",
                             }}
                           >
-                            {pattient?.post}
-                          </Typography>
+                            {proceeding?.post}
+                          </Typography> */}
                         </Box>
                       </Box>
                     </TableCell>
                     <TableCell
-                      onClick={() => {
-                        setOpenProfile(true);
-                        setSelectedPatient(pattient);
-                      }}
+                    // onClick={() => {
+                    //   setOpenProfile(true);
+                    //   setSelectedPatient(proceeding);
+                    // }}
                     >
                       <Typography
                         color="textSecondary"
                         variant="subtitle2"
                         fontWeight={400}
                       >
-                        {pattient?.address}
+                        {proceeding?.adictions?.doyouSmoke}
+                        {proceeding?.adictions?.drinksAlcohol}
+                        {proceeding?.adictions?.haveAddictions}
                       </Typography>
-                    </TableCell>
-                    <TableCell>
-                      <Chip
-                        sx={{
-                          px: "4px",
-                          backgroundColor: "primary.main",
-                          color: "#fff",
-                        }}
-                        size="small"
-                        label="Medium"
-                      ></Chip>
                     </TableCell>
                     <TableCell>
                       {/* <Actions

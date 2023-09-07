@@ -63,7 +63,7 @@ const Menuitems: MenuitemsType[] = [
   {
     id: uniqueId(),
     title: "Proceedings List",
-    icon: IconPlus,
+    icon: IconList,
     href: "/proceedings/list",
   },
   {

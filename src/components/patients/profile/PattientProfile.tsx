@@ -56,7 +56,7 @@ const PattientProfile = ({
               Religion: {selectedPattient?.religion}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              Gender: {selectedPattient?.sex}
+              gender: {selectedPattient?.gender}
             </Typography>
           </DialogContentText>
         </DialogContent>
