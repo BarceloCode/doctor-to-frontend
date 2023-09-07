@@ -53,7 +53,7 @@ const Menuitems: MenuitemsType[] = [
     id: uniqueId(),
     title: "Create Proceedings",
     icon: IconPlus,
-    href: "/proceedings",
+    href: "/proceedings/list",
   },
   {
     navlabel: true,
