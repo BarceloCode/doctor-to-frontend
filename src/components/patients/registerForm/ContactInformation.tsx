@@ -11,6 +11,7 @@ const ContactInformation = ({
   touched,
 }: any) => {
   const { t } = useTranslation();
+  console.log(values, "values on caontact")
   return (
     <div>
       {/* ------------------------------------------------------------------------------------------------ */}
@@ -44,7 +45,7 @@ const ContactInformation = ({
           variant="outlined"
           fullWidth
         />
-        {errors.phone && touched.phone && errors.phone}
+        {errors.emergencyContact && touched.emergencyContact && errors.emergencyContact}
         <CustomFormLabel htmlFor="emergencyContact-text">
           {t(`Emergency Phone Number`)}
         </CustomFormLabel>
@@ -53,14 +54,14 @@ const ContactInformation = ({
           name="emergencyContact"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={values?.emergencyPhone}
+          value={values?.emergencyContact}
           id="emergencyContact-text"
           variant="outlined"
           fullWidth
         />
-        {errors.emergencyPhone &&
-          touched.emergencyPhone &&
-          errors.emergencyPhone}
+        {errors.emergencyContact &&
+          touched.emergencyContact &&
+          errors.emergencyContact}
       </Grid>
       {/* ------------------------------------------------------------------------------------------------ */}
       {/* Patient contact information */}

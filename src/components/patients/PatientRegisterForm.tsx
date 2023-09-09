@@ -29,14 +29,14 @@ const PatientRegisterForm = () => {
           phone: "",
           emergencyContact: "",
 
-          street: "",
+          address: "",
           city: "",
           state: "",
-          zipCode: "",
+          zipcode: "",
           country: "mx",
 
           name: "",
-          lastName: "",
+          surname: "",
           gender: "male",
           religion: "",
           birthdate: Date,
@@ -59,13 +59,20 @@ const PatientRegisterForm = () => {
         }}
         onSubmit={(values, { setSubmitting }) => {
           dispatch(setLoadder(true));
-          const address = `${values.street} ${values.zipCode} ${values.city} ${values.state} ${values.country}`;
+          // const address = `${values.street} ${values.zipCode} ${values.city} ${values.state} ${values.country}`;
           const patient: any = {
             email: values.email,
             phone: `${values.phone}`,
             emergencyContact: `${values.emergencyContact}`,
-            address: address,
-            name: `${values.name} ${values.lastName}`,
+            address: values.address,
+            city: values.city,
+            zipcode: values.zipcode,
+            state: values.state,
+            country: values.country,
+            // address: address,
+            // name: `${values.name} ${values.lastName}`,
+            name: values.name,
+            sursame: values.surname,
             gender: values.gender,
             religion: values.religion,
             birthdate: values.birthdate.toString(),

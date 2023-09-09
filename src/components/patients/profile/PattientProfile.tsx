@@ -56,14 +56,18 @@ const PattientProfile = ({
               Religion: {selectedPattient?.religion}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              Gender: {selectedPattient?.sex}
+              gender: {selectedPattient?.gender}
             </Typography>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Typography
             component={Link}
-            href={`/proceedings/create/?id=${selectedPattient?._id}`}
+            // href={`/proceedings/create/id=${selectedPattient?._id}`}
+            href={{
+              pathname: "/expedients/create/",
+              query: { id: selectedPattient?._id },
+            }}
             fontWeight="500"
             sx={{
               textDecoration: "none",

@@ -28,14 +28,14 @@ const EditPatientForm = ({
               phone: "",
               emergencyContact: "",
 
-              street: "",
+              // street: "",
               city: "",
               state: "",
-              zipCode: "",
+              zipcode: "",
               country: "mx",
 
               name: "",
-              lastName: "",
+              surname: "",
               gender: "male",
               religion: "",
               birthdate: Date,
@@ -59,22 +59,29 @@ const EditPatientForm = ({
       }}
       onSubmit={(values: any, { setSubmitting }: any) => {
         dispatch(setLoadder(true));
-        const address = `${values.street} ${values.zipCode} ${values.city} ${values.state} ${values.country}`;
-        const patient: any = {
-          email: values.email,
-          phone: `${values.phone}`,
-          emergencyContact: `${values.emergencyContact}`,
-          address: address,
-          name: `${values.name} ${values.lastName}`,
-          gender: values.gender,
-          religion: values.religion,
-          birthdate: values.birthdate.toString(),
-          civilstatus: values.civilstatus,
-          ocupation: values.ocupation,
-          bloodType: values.bloodType,
-          age: values.age,
-          curp: values.curp,
-        };
+          // const address = `${values.street} ${values.zipCode} ${values.city} ${values.state} ${values.country}`;
+          const patient: any = {
+            email: values.email,
+            phone: `${values.phone}`,
+            emergencyContact: `${values.emergencyContact}`,
+            address: values.address,
+            city: values.city,
+            zipcode: values.zipcode,
+            state: values.state,
+            country: values.country,
+            // address: address,
+            // name: `${values.name} ${values.lastName}`,
+            name: values.name,
+            sursame: values.surname,
+            gender: values.gender,
+            religion: values.religion,
+            birthdate: values.birthdate.toString(),
+            civilstatus: values.civilstatus,
+            ocupation: values.ocupation,
+            bloodType: values.bloodType,
+            age: values.age,
+            curp: values.curp,
+          };
         // notifySuccess();
         console.log("hola");
 
