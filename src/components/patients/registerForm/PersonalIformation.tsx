@@ -14,33 +14,33 @@ const PersonalIformation = ({
   const { t } = useTranslation();
   const genders = [
     {
-      value: "female",
+      value: "Female",
       label: "Female",
     },
     {
-      value: "male",
+      value: "Male",
       label: "Male",
     },
     {
-      value: "other",
+      value: "Other",
       label: "Other",
     },
   ];
   const maritalStus = [
     {
-      value: "single",
+      value: "Singles",
       label: "Singles",
     },
     {
-      value: "married",
+      value: "Married",
       label: "Married",
     },
     {
-      value: "widower",
+      value: "Widower",
       label: "Widower",
     },
     {
-      value: "free-Union",
+      value: "Free-Union",
       label: "Free Union",
     },
     {
@@ -48,8 +48,13 @@ const PersonalIformation = ({
       label: "Divorced",
     },
   ];
+  // console.clear();
+  // console.log(values, "values");
+
   return (
     <div>
+      {/* {values.name}
+      {values._id} */}
       {/* ------------------------------------------------------------------------------------------------ */}
       {/* Patient iformation */}
       {/* ------------------------------------------------------------------------------------------------ */}
@@ -59,12 +64,13 @@ const PersonalIformation = ({
           <CustomFormLabel htmlFor="name-text">
             {t(`First Name`)}
           </CustomFormLabel>
+          {/* {values?.name, "asdas"} */}
           <CustomTextField
             type="name"
             name="name"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.name}
+            value={values?.name}
             id="name-text"
             variant="outlined"
             fullWidth
@@ -77,7 +83,7 @@ const PersonalIformation = ({
             name="gender"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.gender}
+            value={values?.gender}
             id="gender-text"
             fullWidth
             variant="outlined"
@@ -94,7 +100,7 @@ const PersonalIformation = ({
             name="curp"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.curp}
+            value={values?.curp}
             id="curp-text"
             variant="outlined"
             fullWidth
@@ -107,7 +113,7 @@ const PersonalIformation = ({
             name="religion"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.religion}
+            value={values?.religion}
             id="religion-text"
             variant="outlined"
             fullWidth
@@ -120,7 +126,7 @@ const PersonalIformation = ({
             name="bloodType"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.bloodType}
+            value={values?.bloodType}
             id="bloodType-text"
             variant="outlined"
             fullWidth
@@ -136,7 +142,7 @@ const PersonalIformation = ({
             name="lastName"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.lastName}
+            value={values?.surname}
             id="lastName-text"
             variant="outlined"
             fullWidth
@@ -144,13 +150,12 @@ const PersonalIformation = ({
           <CustomFormLabel htmlFor="birthdate">
             {t(`Date of Birth`)}
           </CustomFormLabel>
-
           <CustomTextField
             type="date"
             name="birthdate"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.datheOfBirth}
+            value={values?.birthdate}
             id="birthdate"
             variant="outlined"
             fullWidth
@@ -166,7 +171,7 @@ const PersonalIformation = ({
             name="civilstatus"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.civilstatus}
+            value={values?.civilstatus}
             id="civilstatus-text"
             fullWidth
             variant="outlined"
@@ -185,7 +190,7 @@ const PersonalIformation = ({
             name="ocupation"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.ocupation}
+            value={values?.ocupation}
             id="ocupation-text"
             variant="outlined"
             fullWidth
@@ -196,7 +201,7 @@ const PersonalIformation = ({
             name="age"
             onChange={handleChange}
             onBlur={handleBlur}
-            // value={values.age}
+            value={values?.age}
             id="age-text"
             variant="outlined"
             fullWidth

@@ -21,28 +21,34 @@ import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import ListItem from "@mui/material/ListItem";
 import { useState } from "react";
 import Button from "@mui/material/Button";
+import Link from "next/link";
 
 const MobileButtonsBar = () => {
   const [open, setOpen] = useState(false);
   const list = [
     {
       txt: "Book Apointment",
+      href: "",
       icon: <EventAvailableIcon />,
     },
     {
       txt: "Add Patient",
+      href: "/patients/register",
       icon: <AddIcon />,
     },
     {
       txt: "Calendar",
+      href: "/bookings/calendar",
       icon: <CalendarMonthIcon />,
     },
     {
       txt: "Expedient",
+      href: "/expedients/list",
       icon: <FeedIcon />,
     },
     {
       txt: "Cash register",
+      href: "",
       icon: <MonetizationOnIcon />,
     },
   ];
@@ -71,7 +77,7 @@ const MobileButtonsBar = () => {
         <List>
           {list.map((item: any, index: number) => (
             <ListItem key={index} disablePadding>
-              <ListItemButton>
+              <ListItemButton component={Link} href={item?.href}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.txt} />
               </ListItemButton>

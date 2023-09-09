@@ -9,33 +9,43 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { setLoadder, setToast } from "src/store/customizer/CustomizerSlice";
 
-const EditPatientForm = ({ setOpen, idPattient }: any) => {
+const EditPatientForm = ({
+  setOpen,
+  idPattient,
+  selectedPattient = false,
+}: any) => {
   const router = useRouter();
   const dispatch = useDispatch();
+  // console.log(selectedPattient, "selectedPattient");
+
   return (
     <Formik
-      initialValues={{
-        email: "",
-        phone: "",
-        emergencyContact: "",
+      initialValues={
+        selectedPattient
+          ? selectedPattient
+          : {
+              email: "",
+              phone: "",
+              emergencyContact: "",
 
-        street: "",
-        city: "",
-        state: "",
-        zipCode: "",
-        country: "mx",
+              // street: "",
+              city: "",
+              state: "",
+              zipcode: "",
+              country: "mx",
 
-        name: "",
-        lastName: "",
-        gender: "male",
-        religion: "",
-        birthdate: Date,
-        civilstatus: "single",
-        ocupation: "",
-        bloodType: "",
-        age: "",
-        curp: "",
-      }}
+              name: "",
+              surname: "",
+              gender: "male",
+              religion: "",
+              birthdate: Date,
+              civilstatus: "single",
+              ocupation: "",
+              bloodType: "",
+              age: "",
+              curp: "",
+            }
+      }
       validate={(values: any) => {
         // const errors = {};
         // if (!values.email) {
@@ -49,25 +59,32 @@ const EditPatientForm = ({ setOpen, idPattient }: any) => {
       }}
       onSubmit={(values: any, { setSubmitting }: any) => {
         dispatch(setLoadder(true));
-        const address = `${values.street} ${values.zipCode} ${values.city} ${values.state} ${values.country}`;
-        const patient: any = {
-          email: values.email,
-          phone: `${values.phone}`,
-          emergencyContact: `${values.emergencyContact}`,
-          address: address,
-          name: `${values.name} ${values.lastName}`,
-          gender: values.gender,
-          religion: values.religion,
-          birthdate: values.birthdate.toString(),
-          civilstatus: values.civilstatus,
-          ocupation: values.ocupation,
-          bloodType: values.bloodType,
-          age: values.age,
-          curp: values.curp,
-        };
+          // const address = `${values.street} ${values.zipCode} ${values.city} ${values.state} ${values.country}`;
+          const patient: any = {
+            email: values.email,
+            phone: `${values.phone}`,
+            emergencyContact: `${values.emergencyContact}`,
+            address: values.address,
+            city: values.city,
+            zipcode: values.zipcode,
+            state: values.state,
+            country: values.country,
+            // address: address,
+            // name: `${values.name} ${values.lastName}`,
+            name: values.name,
+            sursame: values.surname,
+            gender: values.gender,
+            religion: values.religion,
+            birthdate: values.birthdate.toString(),
+            civilstatus: values.civilstatus,
+            ocupation: values.ocupation,
+            bloodType: values.bloodType,
+            age: values.age,
+            curp: values.curp,
+          };
         // notifySuccess();
         console.log("hola");
-        
+
         updatePatient(patient, idPattient).then(function (response) {
           if (response?.success) {
             // console.log(response);
@@ -110,6 +127,8 @@ const EditPatientForm = ({ setOpen, idPattient }: any) => {
         /* and other goodies */
       }) => (
         <form>
+          {/* {idPattient}
+          {pattient.name} */}
           <PersonalIformation
             values={values}
             errors={errors}
