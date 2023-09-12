@@ -162,12 +162,18 @@ const PatientsListTable = ({ patients }: any) => {
                         {pattient?.address}
                       </Typography>
                     </TableCell>
-                    <TableCell>
+                    <TableCell
+                      onClick={() => {
+                        setOpenProfile(true);
+                        setSelectedPatient(pattient);
+                      }}
+                    >
                       <Chip
                         sx={{
                           px: "4px",
                           backgroundColor: "primary.main",
                           color: "#fff",
+                          cursor: "pointer",
                         }}
                         size="small"
                         label="Medium"

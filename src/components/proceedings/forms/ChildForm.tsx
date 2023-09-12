@@ -16,7 +16,7 @@ const ChildForm = ({
   isOneItem = false,
 }: any) => {
   const { t } = useTranslation();
-  // console.log("render ChildForm");
+  // console.log(values, "values");
   return (
     <Grid item lg={isOneItem ? 12 : 6} md={12} sm={12} xs={12}>
       <CustomFormLabel
@@ -28,16 +28,34 @@ const ChildForm = ({
       >
         {title}
       </CustomFormLabel>
-
-      <CustomTextField
-        type={objKey}
-        name={objKey}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        id={`{${objKey}-text`}
-        variant="outlined"
-        fullWidth
-      />
+      {objKey == "patient" ? (
+        <CustomTextField
+          disabled={true}
+          sx={{
+            "& .MuiInputBase-input.Mui-disabled": {
+              WebkitTextFillColor: "#000000",
+            },
+          }}
+          type={objKey}
+          name={objKey}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          value={values?.patient}
+          id={`{${objKey}-text`}
+          variant="outlined"
+          fullWidth
+        />
+      ) : (
+        <CustomTextField
+          type={objKey}
+          name={objKey}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          id={`{${objKey}-text`}
+          variant="outlined"
+          fullWidth
+        />
+      )}
     </Grid>
   );
 };

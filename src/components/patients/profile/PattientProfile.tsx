@@ -17,7 +17,7 @@ const PattientProfile = ({
   openProfile = false,
   setOpenProfile,
   selectedPattient,
-}: any) => {
+}: any) => { 
   console.log(selectedPattient, "selectedPattient profile");
 
   return (
@@ -34,9 +34,7 @@ const PattientProfile = ({
         keepMounted={false}
       >
         <DialogTitle id="alert-dialog-title">
-          <Typography variant="h3" gutterBottom>
             Name: {selectedPattient?.name}
-          </Typography>
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">

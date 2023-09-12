@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { useDispatch } from "src/store/Store";
 import { setLoadder, setToast } from "src/store/customizer/CustomizerSlice";
+import ChildForm from "./registerForm/ChildForm";
 
 const PatientRegisterForm = () => {
   const { t } = useTranslation();
@@ -18,6 +19,8 @@ const PatientRegisterForm = () => {
   const dispatch = useDispatch();
   // const txtSuccess = t(`Patient has successfully registered`);
   // const notifySuccess = () => toast.success(txtSuccess);
+  console.log("render form");
+
   return (
     <div>
       {/* ------------------------------------------------------------------------------------------------ */}
@@ -33,14 +36,14 @@ const PatientRegisterForm = () => {
           city: "",
           state: "",
           zipcode: "",
-          country: "mx",
+          country: "Mexico",
 
           name: "",
           surname: "",
-          gender: "male",
+          gender: "Male",
           religion: "",
-          birthdate: Date,
-          civilstatus: "single",
+          birthdate: new Date().toISOString().split("T")[0],
+          civilstatus: "Singles",
           ocupation: "",
           bloodType: "",
           age: "",
@@ -72,7 +75,7 @@ const PatientRegisterForm = () => {
             // address: address,
             // name: `${values.name} ${values.lastName}`,
             name: values.name,
-            sursame: values.surname,
+            surname: values.surname,
             gender: values.gender,
             religion: values.religion,
             birthdate: values.birthdate.toString(),
@@ -148,21 +151,7 @@ const PatientRegisterForm = () => {
             }
           >
             <form>
-              <PersonalIformation
-                values={values}
-                errors={errors}
-                touched={touched}
-                handleChange={handleChange}
-                handleBlur={handleBlur}
-              />
-              <AddressInformation
-                values={values}
-                errors={errors}
-                touched={touched}
-                handleChange={handleChange}
-                handleBlur={handleBlur}
-              />
-              <ContactInformation
+              <ChildForm
                 values={values}
                 errors={errors}
                 touched={touched}
