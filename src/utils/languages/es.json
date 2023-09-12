@@ -17,6 +17,7 @@
   "Cancel": "Cancelar",
   "Submit": "Enviar",
 
+  "Appointments": "Citas",
   "Patients": "Pacientes",
   "Patient": "Paciente",
   "patient": "paciente",
@@ -24,6 +25,7 @@
   "Patient Register": "Registrar Paciente",
   "Calendar": "Calendario",
   "Patients List": "Lista de Pacientes",
+  "Patient List": "Lista de Pacientes",
   "Patient Information": "Información de paciente",
   "Patient has successfully registered": "Paciente regristrado exitosamente",
 

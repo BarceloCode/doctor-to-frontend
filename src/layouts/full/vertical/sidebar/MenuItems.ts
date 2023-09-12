@@ -68,7 +68,7 @@ const Menuitems: MenuitemsType[] = [
   },
   {
     navlabel: true,
-    subheader: "Books",
+    subheader: "Appointments",
   },
   {
     id: uniqueId(),
