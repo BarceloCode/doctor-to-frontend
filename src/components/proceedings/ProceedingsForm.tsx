@@ -22,6 +22,11 @@ const ProceedingsForm = () => {
   //HOC component
   const router = useRouter();
   const dispatch = useDispatch();
+  const { id } = router.query;
+  const cardTitle = t("Proceedings Formulary");
+
+  // console.log(id, "id");
+
   return (
     <div>
       {/* ------------------------------------------------------------------------------------------------ */}
@@ -29,94 +34,101 @@ const ProceedingsForm = () => {
       {/* ------------------------------------------------------------------------------------------------ */}
       <Formik
         initialValues={{
-          patient: "",
+          patient: id,
           familyHistory: {
-            family: "",
+            familyMember: "",
             diabetes: "",
             hypertension: "",
-            autoimmuneDiseases: "",
+            autoimmuneDiseasesF: "",
+            cancerF: "",
+            othersDiseasesF: "",
           },
 
           pathologicalHistory: {
-            diabetesMellitus: "",
+            mellitusDiabetes: "",
             arterialHypertension: "",
-            endocrinologicalDiseases: "",
-            diseasesAutoimmune: "",
+            endocrinolgicalDiseases: "",
+            psychiatricDiseases: "",
+            autoimmuneDiseases: "",
             vih: "",
-            herpes: "",
+            herpesLabialis: "",
+            herpesZoster: "",
             bloodTransfusions: "",
             trauma: "",
-            fracture: "",
+            fractures: "",
             hospitalizations: "",
             previousSurgeries: "",
             hepatitis: "",
             cancer: "",
             epilepsy: "",
-            allergies: "",
-            others: "",
-            doyouSmoke: "",
-            howMany: "",
-            adictions: "",
-            whichOne: "",
-            drinkAlcohol: "",
-            alchohol: "",
+            allergies: {
+              type: String,
+              default: "N/A",
+            },
+
+            evolution: "",
+            medicalTreatment: "",
             bloodPhobia: "",
             needlePhobia: "",
             fainting: "",
-            medicines: "",
-            medicineName: "",
+            takingMedication: "",
             bruises: "",
-            tanningbed: "",
-            anesthesia: "",
+            tanningBed: "",
+            localAnesthesia: "",
             anesthesiaProblems: "",
-            problem: "",
-            vaccine: "",
-            vaccineName: "",
+            vaccinationsReceived: "",
             infections: "",
-            infectionName: "",
-            medicalTreatment: "",
-            treatment: "",
-            exercise: "",
-            typeof: "",
+            medicaltreatmentReceived: "",
+            doExcerice: "",
+            followDiet: "",
+            others: "",
           },
-          gynecologistsHistory: {
+
+          adictions: {
+            doyouSmoke: "",
+            haveAddictions: "",
+            drinksAlcohol: "",
+          },
+
+          gynecobstetricHistory: {
             pregnant: "",
-            mernacaNo: "",
+            menarcaNo: "",
             fum: "",
-            menstrualrhythm: "",
+            menstrualRythim: "",
             fup: "",
             g: "",
-            p: "",
             a: "",
-            c: "",
-            contraceptivemethod: "",
+            anticonceptiveMethod: "",
           },
 
           solarProtection: {
             solarExposition: "",
-            time: "",
-            usesolarProtection: "",
+            expositionTime: "",
+            usersolarProtection: "",
             brand: "",
             fps: "",
           },
 
-          consultReason: "",
-          other: "",
+          consultReason: {
+            motive: "",
+            other: "",
+          },
+
           previousTreatments: {
             procedure: "",
             product: "",
-            applicationDate: "",
+            date: "",
           },
 
           physicalExam: {
-            flitzpatrick: "",
+            fitzpatrick: "",
             glogau: "",
-            typeSkin: "",
-            typeFace: "",
-            dermatologicallesions: "",
-            lesion: "",
-            lesionType: "",
-            location: "",
+            skinType: "",
+            faceType: "",
+            dermatologicalLesions: {
+              type: String,
+              deafult: "N/A",
+            },
           },
 
           habitusExterior: {
@@ -127,14 +139,15 @@ const ProceedingsForm = () => {
             facies: "",
             anormalMovements: "",
             gear: "",
-            consciousness: "",
-            others: "",
+            stateofConsciousness: "",
+            notes: "",
           },
 
           vitalSigns: {
             fc: "",
+            fr: "",
             ta: "",
-            temp: "",
+            temperature: "",
             weight: "",
             size: "",
             imc: "",
@@ -145,6 +158,7 @@ const ProceedingsForm = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
+          dispatch(setLoadder(true));
           // console.log(values, "values");
           storeProcedding(values).then(function (response) {
             // console.log(response, "responsea");
@@ -183,7 +197,7 @@ const ProceedingsForm = () => {
           isValid,
         }) => (
           <ParentCard
-            title="Proceedings Formulary"
+            title={cardTitle}
             footer={
               <>
                 <Button
@@ -192,7 +206,7 @@ const ProceedingsForm = () => {
                   color="primary"
                   disabled={!(dirty && isValid)}
                 >
-                  Submit
+                  {t(`Submit`)}
                 </Button>
                 <Button
                   variant="contained"
@@ -201,7 +215,7 @@ const ProceedingsForm = () => {
                     ml: 1,
                   }}
                 >
-                  Cancel
+                  {t(`Cancel`)}
                 </Button>
               </>
             }

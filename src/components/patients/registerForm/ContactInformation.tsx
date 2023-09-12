@@ -11,7 +11,7 @@ const ContactInformation = ({
   touched,
 }: any) => {
   const { t } = useTranslation();
-  console.log(values, "values on caontact")
+
   return (
     <div>
       {/* ------------------------------------------------------------------------------------------------ */}
@@ -45,7 +45,9 @@ const ContactInformation = ({
           variant="outlined"
           fullWidth
         />
-        {errors.emergencyContact && touched.emergencyContact && errors.emergencyContact}
+        {errors.emergencyContact &&
+          touched.emergencyContact &&
+          errors.emergencyContact}
         <CustomFormLabel htmlFor="emergencyContact-text">
           {t(`Emergency Phone Number`)}
         </CustomFormLabel>

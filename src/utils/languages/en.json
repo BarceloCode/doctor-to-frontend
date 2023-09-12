@@ -10,23 +10,69 @@
   "Register": "Register",
   "List": "List",
 
+  "Continue": "Continue",
+
   "Costemologist": "Costemologist",
 
+  "Cancel": "Cancel",
+  "Submit": "Submit",
+
   "Patient Register": "Patients Register",
+  "Calendar": "Calendar",
   "Patients List": "Patients List",
   "Patients": "Patients",
   "Patient": "Patient",
+  "patient": "patient",
+  "Expedients List": "Expedients List",
   "Patient Information": "Patient Information",
   "Patient has successfully registered": "Patient has successfully registered",
+
+  "familyHistory": "familyHistory",
+  "diabetes": "diabetes",
+  "hypertension": "hypertension",
+  "autoimmuneDiseasesF": "autoimmuneDiseasesF",
+  "cancerF": "cancerF",
+  "othersDiseasesF": "othersDiseasesF",
+  "familyMember": "familyMember",
+
+  "Create Proceedings": "Create Proceedings",
+  "Proceedings Formulary": "Proceedings Formulary",
+
+  "Family History": "Family History",
+  "autoimmune Diseases F": "autoimmune Diseases F",
+  "cancer F": "cancer F",
+  "others Diseases F": "Others DiseasesF",
+  "family Member": "family Member",
 
   "Phone": "Phone",
   "Adress": "Adress",
   "Budget": "Budget",
   "Status": "Status",
+  "Actions": "Actions",
+
+  "Cash register": "Cash register",
+  "Expedients": "Expedients",
+  "Expedient": "Expedient",
+  "Add Patient": "Add Patient",
+  "Book Apointment": "Book Apointment",
+  "View Profile": "View Profile",
+
+  "Civil Status": "Civil Status",
+  "Gender": "Gender",
+  "Create Expedient": "Create Expedient",
+
+  "Search by name or phone": "Search by name or phone",
+
+  "Search": "Search",
+  "by": "by",
+  "name": "name",
+  "or": "or",
+  "phone": "phone",
 
   "Person Info": "Person Info",
   "First Name": "First Name",
   "Last Name": "Last Name",
+  "Age": "Age",
   "Select Gender": "Select Gender",
   "Date of Birth": "Date of Birth",
   "Marital Status": "Marital Status",
