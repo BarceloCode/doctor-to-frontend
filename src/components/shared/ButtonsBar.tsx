@@ -41,6 +41,7 @@ const ButtonsBar = () => {
         <BottomNavigation
           showLabels
           sx={{
+            borderRadius: "15px",
             mb: 3,
             background: "transparent",
             "box-shadow": "none",
@@ -51,6 +52,10 @@ const ButtonsBar = () => {
           // }}
         >
           <BottomNavigationAction
+            sx={{
+              background: "white",
+              borderRadius: "15px",
+            }}
             // sx={{
             //   background: "black",
             //   color: "white",
@@ -63,6 +68,7 @@ const ButtonsBar = () => {
           {currentRoute == urlCatalog[1] ? (
             <BottomNavigationAction
               sx={{
+                borderRadius: "15px",
                 background: "black",
                 color: "white",
               }}
@@ -73,6 +79,10 @@ const ButtonsBar = () => {
             />
           ) : (
             <BottomNavigationAction
+              sx={{
+                background: "white",
+                borderRadius: "15px",
+              }}
               component={Link}
               href="/patients/register"
               label="Add Patient"
@@ -83,6 +93,7 @@ const ButtonsBar = () => {
           {currentRoute == urlCatalog[3] ? (
             <BottomNavigationAction
               sx={{
+                borderRadius: "15px",
                 background: "black",
                 color: "white",
               }}
@@ -93,6 +104,10 @@ const ButtonsBar = () => {
             />
           ) : (
             <BottomNavigationAction
+              sx={{
+                background: "white",
+                borderRadius: "15px",
+              }}
               component={Link}
               href="/bookings/calendar"
               label="Calendar"
@@ -103,6 +118,7 @@ const ButtonsBar = () => {
           {currentRoute == urlCatalog[2] ? (
             <BottomNavigationAction
               sx={{
+                borderRadius: "15px",
                 background: "black",
                 color: "white",
               }}
@@ -113,6 +129,10 @@ const ButtonsBar = () => {
             />
           ) : (
             <BottomNavigationAction
+              sx={{
+                background: "white",
+                borderRadius: "15px",
+              }}
               component={Link}
               href="/expedients/list"
               label="Expedients"
@@ -121,6 +141,10 @@ const ButtonsBar = () => {
           )}
 
           <BottomNavigationAction
+            sx={{
+              background: "white",
+              borderRadius: "15px",
+            }}
             // sx={{
             //   background: "black",
             //   color: "white"
