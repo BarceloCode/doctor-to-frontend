@@ -2,6 +2,7 @@ import { Alert, Button, Grid } from "@mui/material";
 import React, { ElementType, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { whiteSpaceBtweenCapitalized } from "src/utils/Text";
+import { TranslateComponent } from "../shared/TranslateComponent";
 
 function FormSections(WrappedComponent: ElementType) {
   const [divs, setDivs]: any = useState([
@@ -17,10 +18,12 @@ function FormSections(WrappedComponent: ElementType) {
     "none",
     "none",
   ]);
+  const [titles, setTitles]: any = useState([]);
   const itemEls = useRef(new Array());
   const Wrapper = (props: any) => {
     const { t } = useTranslation();
     const formGrups = Object.entries(props.values);
+    // const titles = Object.entries(props.values);
     const memoInputs = React.useMemo(() => {
       const handleInputs = (index: number) => {
         // if (index + 1 == formGrups.length) {
@@ -36,6 +39,12 @@ function FormSections(WrappedComponent: ElementType) {
         const mainGroupKey = formGrup[0];
         const mainGroupVal = formGrup[1];
         const title = t(`${whiteSpaceBtweenCapitalized(mainGroupKey)}`);
+
+        // const title = t(mainGroupKey);
+        // const title = t(`${whiteSpaceBtweenCapitalized(mainGroupKey)}`);
+        // const title = whiteSpaceBtweenCapitalized(mainGroupKey);
+        // const title = "Patient";
+        console.log(typeof title, "asdasd", title.length);
         if (valueIsObj) {
           const objGroup = Object.entries(mainGroupVal);
 
@@ -79,7 +88,7 @@ function FormSections(WrappedComponent: ElementType) {
                   variant="contained"
                   color="primary"
                 >
-                  Continue
+                  {t("Continue")}
                 </Button>
               )}
             </div>
@@ -102,7 +111,7 @@ function FormSections(WrappedComponent: ElementType) {
               <Grid container spacing={3} mb={3} mt={1}>
                 <WrappedComponent
                   {...props}
-                  title={title}
+                  title={mainGroupKey}
                   isOneItem={true}
                   objKey={mainGroupKey}
                   objValue={mainGroupVal}
@@ -116,7 +125,7 @@ function FormSections(WrappedComponent: ElementType) {
                   variant="contained"
                   color="primary"
                 >
-                  Continue
+                  {t("Continue")}
                 </Button>
               )}
             </div>

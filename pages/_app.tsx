@@ -6,7 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeSettings } from "../src/theme/Theme";
 import createEmotionCache from "../src/createEmotionCache";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import Store from "../src/store/Store";
 import RTL from "./../src/layouts/full/shared/customizer/RTL";
 import { useSelector } from "../src/store/Store";
@@ -31,7 +31,7 @@ import { useRouter } from "next/router";
 import ButtonsBar from "src/components/shared/ButtonsBar";
 import { Box } from "@mui/material";
 import MobileButtonsBar from "src/components/shared/MobileButtonsBar";
-
+import { setToast } from "src/store/customizer/CustomizerSlice";
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
@@ -51,7 +51,7 @@ const MyApp = (props: MyAppProps) => {
   }: any = props;
   const theme = ThemeSettings();
   const customizer = useSelector((state: AppState) => state.customizer);
-
+  const dispatch = useDispatch();
   const layout = pageProps.layout || "Full";
   const Layout = layouts[Component.layout] || FullLayout;
   const ComponentWithLoadder = Loadder(Component);
@@ -79,7 +79,16 @@ const MyApp = (props: MyAppProps) => {
     const token = localStorage?.getItem("token") || "";
     // console.log(id, token, "data localstorage");
     // if (!id && !token) window.location = "/auth/auth1/login" as any;
-    if (!id && !token) router.push("/auth/auth1/login");
+    if (!id && !token) {
+      // dispatch(
+      //   setToast({
+      //     active: true,
+      //     type: "error",
+      //     msj: "Credentials Expired",
+      //   })
+      // );
+      router.push("/auth/auth1/login");
+    }
   }
 
   return (

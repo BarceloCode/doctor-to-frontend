@@ -3,6 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import CustomFormLabel from "src/components/forms/theme-elements/CustomFormLabel";
 import CustomTextField from "src/components/forms/theme-elements/CustomTextField";
+import { TranslateComponent } from "src/components/shared/TranslateComponent";
 
 const ChildForm = ({
   handleChange,
@@ -26,7 +27,7 @@ const ChildForm = ({
         }}
         htmlFor={`{${objKey}-text`}
       >
-        {title}
+        {t(title)}
       </CustomFormLabel>
       {objKey == "patient" ? (
         <CustomTextField

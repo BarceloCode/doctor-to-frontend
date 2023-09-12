@@ -13,8 +13,10 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import FeedIcon from "@mui/icons-material/Feed";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 
 const ButtonsBar = () => {
+  const { t } = useTranslation();
   const router = useRouter();
   const currentRoute = router.pathname.toString();
   console.log(router.pathname, "router.pathname");
@@ -62,7 +64,7 @@ const ButtonsBar = () => {
             // }}
             // component={Link}
             // href="/patients/register"
-            label="Book Apointment"
+            label={t("Book Apointment")}
             icon={<EventAvailableIcon />}
           />
           {currentRoute == urlCatalog[1] ? (
@@ -74,7 +76,7 @@ const ButtonsBar = () => {
               }}
               component={Link}
               href="/patients/register"
-              label="Add Patient"
+              label={t("Add Patient")}
               icon={<AddIcon />}
             />
           ) : (
@@ -85,7 +87,7 @@ const ButtonsBar = () => {
               }}
               component={Link}
               href="/patients/register"
-              label="Add Patient"
+              label={t("Add Patient")}
               icon={<AddIcon />}
             />
           )}
@@ -99,7 +101,7 @@ const ButtonsBar = () => {
               }}
               component={Link}
               href="/bookings/calendar"
-              label="Calendar"
+              label={t("Calendar")}
               icon={<CalendarMonthIcon />}
             />
           ) : (
@@ -110,7 +112,7 @@ const ButtonsBar = () => {
               }}
               component={Link}
               href="/bookings/calendar"
-              label="Calendar"
+              label={t("Calendar")}
               icon={<CalendarMonthIcon />}
             />
           )}
@@ -124,7 +126,7 @@ const ButtonsBar = () => {
               }}
               component={Link}
               href="/expedients/list"
-              label="Expedients"
+              label={t("Expedients")}
               icon={<FeedIcon />}
             />
           ) : (
@@ -135,7 +137,7 @@ const ButtonsBar = () => {
               }}
               component={Link}
               href="/expedients/list"
-              label="Expedients"
+              label={t("Expedients")}
               icon={<FeedIcon />}
             />
           )}
@@ -151,7 +153,7 @@ const ButtonsBar = () => {
             // }}
             // component={Link}
             // href="/patients/register"
-            label="Cash register"
+            label={t("Cash register")}
             icon={<MonetizationOnIcon />}
           />
         </BottomNavigation>

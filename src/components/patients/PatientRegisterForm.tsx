@@ -136,7 +136,7 @@ const PatientRegisterForm = () => {
                   color="primary"
                   disabled={!(dirty && isValid)}
                 >
-                  Submit
+                  {t(`Submit`)}
                 </Button>
                 <Button
                   variant="contained"
@@ -145,7 +145,7 @@ const PatientRegisterForm = () => {
                     ml: 1,
                   }}
                 >
-                  Cancel
+                  {t(`Cancel`)}
                 </Button>
               </>
             }

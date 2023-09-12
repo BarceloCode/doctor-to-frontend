@@ -12,13 +12,15 @@ import {
 } from "@mui/material";
 import React, { useEffect, useMemo } from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const PattientProfile = ({
   openProfile = false,
   setOpenProfile,
   selectedPattient,
-}: any) => { 
-  console.log(selectedPattient, "selectedPattient profile");
+}: any) => {
+  const { t } = useTranslation();
+  // console.log(selectedPattient, "selectedPattient profile");
 
   return (
     <>
@@ -34,31 +36,48 @@ const PattientProfile = ({
         keepMounted={false}
       >
         <DialogTitle id="alert-dialog-title">
-            Name: {selectedPattient?.name}
+          Name: {selectedPattient?.name}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             <Typography variant="h5" gutterBottom>
-              CURP: {selectedPattient?.curp}
+              {t("CURP")}: {selectedPattient?.curp}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              AGE: {selectedPattient?.age}
+              {t("Age")}: {selectedPattient?.age}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              Civil Status: {selectedPattient?.civilstatus}
+              {t("Civil Status")}: {selectedPattient?.civilstatus}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              Phone: {selectedPattient?.phone}
+              {t("Phone")}: {selectedPattient?.phone}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              Religion: {selectedPattient?.religion}
+              {t("Religion")}: {selectedPattient?.religion}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              gender: {selectedPattient?.gender}
+              {t("Gender")}: {selectedPattient?.gender}
             </Typography>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
+          <Typography
+            // component={Link}
+            // // href={`/proceedings/create/id=${selectedPattient?._id}`}
+            // href={{
+            //   pathname: "/expedients/create/",
+            //   query: { id: selectedPattient?._id },
+            // }}
+            fontWeight="500"
+            sx={{
+              padding: "8px",
+              marginRight: "auto",
+              textDecoration: "none",
+              color: "primary.main",
+            }}
+          >
+            {t("View Profile")}
+          </Typography>
           <Typography
             component={Link}
             // href={`/proceedings/create/id=${selectedPattient?._id}`}
@@ -68,11 +87,12 @@ const PattientProfile = ({
             }}
             fontWeight="500"
             sx={{
+              padding: "8px",
               textDecoration: "none",
               color: "primary.main",
             }}
           >
-            Crear Expediente
+            {t("Create Expedient")}
           </Typography>
           {/* <Button autoFocus>Agree</Button> */}
         </DialogActions>

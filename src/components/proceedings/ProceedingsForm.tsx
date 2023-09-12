@@ -23,8 +23,9 @@ const ProceedingsForm = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const { id } = router.query;
+  const cardTitle = t("Proceedings Formulary");
 
-  console.log(id, "id");
+  // console.log(id, "id");
 
   return (
     <div>
@@ -157,6 +158,7 @@ const ProceedingsForm = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
+          dispatch(setLoadder(true));
           // console.log(values, "values");
           storeProcedding(values).then(function (response) {
             // console.log(response, "responsea");
@@ -195,7 +197,7 @@ const ProceedingsForm = () => {
           isValid,
         }) => (
           <ParentCard
-            title="Proceedings Formulary"
+            title={cardTitle}
             footer={
               <>
                 <Button
@@ -204,7 +206,7 @@ const ProceedingsForm = () => {
                   color="primary"
                   disabled={!(dirty && isValid)}
                 >
-                  Submit
+                  {t(`Submit`)}
                 </Button>
                 <Button
                   variant="contained"
@@ -213,7 +215,7 @@ const ProceedingsForm = () => {
                     ml: 1,
                   }}
                 >
-                  Cancel
+                  {t(`Cancel`)}
                 </Button>
               </>
             }
