@@ -6,16 +6,14 @@ const BasicElements = ({ entries }: any) => {
   return (
     <>
       <div className="px-8 py-2">
-        {
-          // entries &&
+        {entries &&
           Object?.entries(entries).map(([key, value], index: number) => {
             return (
               key != "_id" && (
                 <BasicElementsItem objKey={key} value={value} key={index} />
               )
             );
-          })
-        }
+          })}
       </div>
     </>
   );
