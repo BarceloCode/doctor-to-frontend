@@ -17,6 +17,16 @@
   "Cancel": "Cancelar",
   "Submit": "Enviar",
 
+  "Male": "Hombre",
+  "Female": "Mujer",
+  "Other": "Otro",
+
+  "Singles": "Soltero",
+  "Married": "Casado",
+  "Widower": "Viudo",
+  "Free Union": "Union Libre",
+  "Divorced": "Divorciado",
+
   "Appointments": "Citas",
   "Patients": "Pacientes",
   "Patient": "Paciente",

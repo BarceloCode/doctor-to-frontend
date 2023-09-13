@@ -62,6 +62,12 @@ const PattientProfile = ({
         </DialogContent>
         <DialogActions>
           <Typography
+            component={Link}
+            // href="/patients/profile"
+            href={{
+              pathname: "/patients/profile/",
+              query: { id: selectedPattient?._id },
+            }}
             // component={Link}
             // // href={`/proceedings/create/id=${selectedPattient?._id}`}
             // href={{

@@ -50,22 +50,22 @@ const Menuitems: MenuitemsType[] = [
     icon: IconPlus,
     href: "/patients/register",
   },
-  {
-    navlabel: true,
-    subheader: "Expedients",
-  },
+  // {
+  //   navlabel: true,
+  //   subheader: "Expedients",
+  // },
   // {
   //   id: uniqueId(),
   //   title: "Create Proceedings",
   //   icon: IconPlus,
   //   href: "/proceedings",
   // },
-  {
-    id: uniqueId(),
-    title: "Expedients List",
-    icon: IconList,
-    href: "/expedients/list",
-  },
+  // {
+  //   id: uniqueId(),
+  //   title: "Expedients List",
+  //   icon: IconList,
+  //   href: "/expedients/list",
+  // },
   {
     navlabel: true,
     subheader: "Appointments",

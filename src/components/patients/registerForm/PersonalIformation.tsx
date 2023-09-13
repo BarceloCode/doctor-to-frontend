@@ -16,37 +16,37 @@ const PersonalIformation = ({
   const genders = [
     {
       value: "Female",
-      label: "Female",
+      label: t(`Female`),
     },
     {
       value: "Male",
-      label: "Male",
+      label: t(`Male`),
     },
     {
       value: "Other",
-      label: "Other",
+      label: t(`Other`),
     },
   ];
   const maritalStus = [
     {
       value: "Singles",
-      label: "Singles",
+      label: t(`Singles`),
     },
     {
       value: "Married",
-      label: "Married",
+      label: t(`Married`),
     },
     {
       value: "Widower",
-      label: "Widower",
+      label: t(`Widower`),
     },
     {
-      value: "Free-Union",
-      label: "Free Union",
+      value: "Free Union",
+      label: t(`Free Union`),
     },
     {
-      value: "divorced",
-      label: "Divorced",
+      value: "Divorced",
+      label: t(`Divorced`),
     },
   ];
   return (

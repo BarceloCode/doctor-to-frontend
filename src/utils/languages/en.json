@@ -17,6 +17,16 @@
   "Cancel": "Cancel",
   "Submit": "Submit",
 
+  "Male": "Male",
+  "Female": "Female",
+  "Other": "Other",
+
+  "Singles": "Singles",
+  "Married": "Married",
+  "Widower": "Widower",
+  "Free Union": "Free Union",
+  "Divorced": "Divorced",
+
   "Appointments": "Appointments",
   "Patient Register": "Patients Register",
   "Calendar": "Calendar",

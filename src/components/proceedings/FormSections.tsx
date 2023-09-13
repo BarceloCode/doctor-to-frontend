@@ -22,7 +22,7 @@ function FormSections(WrappedComponent: ElementType) {
   const itemEls = useRef(new Array());
   const Wrapper = (props: any) => {
     const { t } = useTranslation();
-    const formGrups = Object.entries(props.values);
+    const formGrups = Object.entries(props.values).slice(0, 11);
     // const titles = Object.entries(props.values);
     const memoInputs = React.useMemo(() => {
       const handleInputs = (index: number) => {
@@ -44,13 +44,14 @@ function FormSections(WrappedComponent: ElementType) {
         // const title = t(`${whiteSpaceBtweenCapitalized(mainGroupKey)}`);
         // const title = whiteSpaceBtweenCapitalized(mainGroupKey);
         // const title = "Patient";
-        console.log(typeof title, "asdasd", title.length);
+        // console.log(typeof title, "asdasd", title.length);
         if (valueIsObj) {
-          const objGroup = Object.entries(mainGroupVal);
+          const objGroup = Object.entries(mainGroupVal).slice(0, 7);
+          console.clear();
+          console.log(objGroup, "objGroup", formGrups, "formGrups");
 
           return (
             <div
-              id={`idContainer-${index}`}
               style={{
                 display: divs[index],
               }}
@@ -97,9 +98,9 @@ function FormSections(WrappedComponent: ElementType) {
           return (
             <div
               id={`idContainer-${index}`}
-              ref={(element) => {
-                itemEls.current.push(element);
-              }}
+              // ref={(element) => {
+              //   itemEls.current.push(element);
+              // }}
               style={{
                 display: divs[index],
               }}
