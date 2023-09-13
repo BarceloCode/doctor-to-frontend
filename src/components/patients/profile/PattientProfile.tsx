@@ -41,22 +41,22 @@ const PattientProfile = ({
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             <Typography variant="h5" gutterBottom>
-              {t("CURP")}: {selectedPattient?.curp}
+              {t("CURP")}: {t(selectedPattient?.curp)}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              {t("Age")}: {selectedPattient?.age}
+              {t("Age")}: {t(selectedPattient?.age)}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              {t("Civil Status")}: {selectedPattient?.civilstatus}
+              {t("Civil Status")}: {t(selectedPattient?.civilstatus)}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              {t("Phone")}: {selectedPattient?.phone}
+              {t("Phone")}: {t(selectedPattient?.phone)}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              {t("Religion")}: {selectedPattient?.religion}
+              {t("Religion")}: {t(selectedPattient?.religion)}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              {t("Gender")}: {selectedPattient?.gender}
+              {t("Gender")}: {t(selectedPattient?.gender)}
             </Typography>
           </DialogContentText>
         </DialogContent>
