@@ -8,8 +8,8 @@ const MainProfile = ({ expedient }: any) => {
   const pattient = expedient?.patient;
   console.log(expedient, "expedient");
   return (
-    <div className="flex w-full">
-      <div className="w-1/2 p-4">
+    <div className="flex flex-col lg:flex-row w-full">
+      <div className="w-full lg:w-1/2 p-4">
         <div className="text-xl font-semibold mb-4">Pattient</div>
         <div className="flex">
           <div className="w-1/3">
@@ -76,7 +76,7 @@ const MainProfile = ({ expedient }: any) => {
         </div>
       </div>
 
-      <div className="w-1/2 flex-col p-4">
+      <div className="w-full lg:w-1/2 flex-col p-4">
         <div>
           <h2 className="font-bold text-xl block capitalize">
             pathological History
@@ -84,11 +84,15 @@ const MainProfile = ({ expedient }: any) => {
           <BasicElements entries={expedient?.pathologicalHistory?.[0]} />
         </div>
         <div className="mt-8">
-          <h2 className="font-bold text-xl block capitalize">previousTreatments</h2>
+          <h2 className="font-bold text-xl block capitalize">
+            previousTreatments
+          </h2>
           <BasicElements entries={expedient?.previousTreatments?.[0]} />
         </div>
         <div className="mt-8">
-          <h2 className="font-bold text-xl block capitalize">solarProtection</h2>
+          <h2 className="font-bold text-xl block capitalize">
+            solarProtection
+          </h2>
           <BasicElements entries={expedient?.solarProtection?.[0]} />
         </div>
       </div>
