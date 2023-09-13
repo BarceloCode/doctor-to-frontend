@@ -153,7 +153,7 @@ const Profile = () => {
           </Box>
         ))}
         <Box mt={2}>
-          <Box
+          {/* <Box
             bgcolor="primary.light"
             p={3}
             mb={3}
@@ -178,7 +178,7 @@ const Profile = () => {
                 height={183}
               ></img>
             </Box>
-          </Box>
+          </Box> */}
           <Button
             // href="/auth/auth1/login"
             onClick={() => {
