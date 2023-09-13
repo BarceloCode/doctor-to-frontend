@@ -35,14 +35,18 @@ const index = () => {
       setLoadding(false);
     };
   }, []);
+
   return (
     <>
       <PageContainer
         title={t(`${"Patient Profile"}`) as string}
-        description="Profile of a pattien"
+        description={t(`${"Profile of a pattien"}`) as string}
       >
-        <Breadcrumb title="Pattient Profile" items={BCrumPatients} />
-        <DashboardCard title="Patient details">
+        <Breadcrumb
+          title={t(`${"Patient Profile"}`) as string}
+          items={BCrumPatients}
+        />
+        <DashboardCard title={t(`${"Patient details"}`) as string}>
           {!loadding ? (
             <>
               <MainProfile expedient={expedient} />

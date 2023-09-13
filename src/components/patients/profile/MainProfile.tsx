@@ -3,9 +3,11 @@ import React from "react";
 import VitalSing from "./Components/VitalSing";
 import FamilyHistoryMember from "./Components/familyHistory/FamilyHistoryMember";
 import BasicElements from "./Components/basicElements/BasicElements";
+import { useTranslation } from "react-i18next";
 
 const MainProfile = ({ expedient }: any) => {
   const pattient = expedient?.patient;
+  const { t } = useTranslation();
   console.log(expedient, "expedient");
   return (
     <div className="flex flex-col lg:flex-row w-full">
@@ -32,7 +34,8 @@ const MainProfile = ({ expedient }: any) => {
           </div>
         </div>
         <div className="mt-8">
-          <h2 className="font-bold text-xl block mb-4">Signos Vitales</h2>
+          <h2 className="font-bold text-xl block mb-4">
+          {t(`vital Signs`)}</h2>
           {expedient?.vitalSigns?.[0] &&
             Object?.entries(expedient?.vitalSigns?.[0]).map(
               ([key, value], index: number) => {
@@ -60,13 +63,13 @@ const MainProfile = ({ expedient }: any) => {
         </div>
         <div className="mt-8">
           <h2 className="font-bold text-xl block capitalize">
-            gynecobstetric History
+            {t(`gynecobstetric History`)}
           </h2>
           <BasicElements entries={expedient?.gynecobstetricHistory?.[0]} />
         </div>
         <div className="mt-8">
           <h2 className="font-bold text-xl block capitalize">
-            habitusExteriory
+            {t(`habitus Exteriory`)}
           </h2>
           <BasicElements entries={expedient?.habitusExterior?.[0]} />
         </div>
@@ -79,19 +82,19 @@ const MainProfile = ({ expedient }: any) => {
       <div className="w-full lg:w-1/2 flex-col p-4">
         <div>
           <h2 className="font-bold text-xl block capitalize">
-            pathological History
+            {t(`pathological History`)}
           </h2>
           <BasicElements entries={expedient?.pathologicalHistory?.[0]} />
         </div>
         <div className="mt-8">
           <h2 className="font-bold text-xl block capitalize">
-            previousTreatments
+            {t(`previousTreatments`)}
           </h2>
           <BasicElements entries={expedient?.previousTreatments?.[0]} />
         </div>
         <div className="mt-8">
           <h2 className="font-bold text-xl block capitalize">
-            solarProtection
+            {t(`solar Protection`)}
           </h2>
           <BasicElements entries={expedient?.solarProtection?.[0]} />
         </div>

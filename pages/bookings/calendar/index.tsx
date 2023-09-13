@@ -14,6 +14,8 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import moment from "moment";
+import "moment/locale/es";
+// import "moment/locale/en";
 import Events from "../../../src/EventData";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
@@ -22,8 +24,7 @@ import Breadcrumb from "../../../src/layouts/full/shared/breadcrumb/Breadcrumb";
 import { IconCheck } from "@tabler/icons-react";
 import BlankCard from "../../../src/components/shared/BlankCard";
 
-moment.locale("en-GB");
-const localizer = momentLocalizer(moment);
+import { useTranslation } from "react-i18next";
 
 type EvType = {
   title: string;
@@ -34,6 +35,14 @@ type EvType = {
 };
 
 export default function BigCalendar() {
+  // const { t } = useTranslation();
+
+  const { t } = useTranslation();
+  const locate = t(`en`);
+  moment.locale(locate);
+  // const localizer = Calendar.momentLocalizer(moment);
+  const localizer = momentLocalizer(moment);
+
   const [calevents, setCalEvents] = React.useState<any>(Events);
   const [open, setOpen] = React.useState<boolean>(false);
   const [title, setTitle] = React.useState<string>("");
@@ -70,6 +79,9 @@ export default function BigCalendar() {
       value: "warning",
     },
   ];
+
+  const titlePage = t(`Calendar`);
+  const subTtitle = t(`Calendar Apointments`);
   const addNewEventAlert = (slotInfo: EvType) => {
     setOpen(true);
     setSlot(slotInfo);
@@ -158,10 +170,18 @@ export default function BigCalendar() {
   const handleEndChange = (newValue: any) => {
     setEnd(newValue);
   };
+  const messages = {
+    next: t(`next`),
+    previous: t(`previous`),
+    today: t(`today`),
+    month: t(`month`),
+    week: t(`week`),
+    day: t(`day`),
+  };
 
   return (
     <PageContainer>
-      <Breadcrumb title="Calendar" subtitle="App" />
+      <Breadcrumb title={titlePage} subtitle={subTtitle} />
       <BlankCard>
         {/* ------------------------------------------- */}
         {/* Calendar */}
@@ -169,6 +189,7 @@ export default function BigCalendar() {
         <CardContent>
           <Calendar
             selectable
+            messages={messages}
             events={calevents}
             defaultView="month"
             scrollToTime={new Date(1970, 1, 1, 6)}
@@ -191,7 +212,7 @@ export default function BigCalendar() {
             {/* Add Edit title */}
             {/* ------------------------------------------- */}
             <Typography variant="h4" sx={{ mb: 2 }}>
-              {update ? "Update Event" : "Add Event"}
+              {update ? t(`Update Event`) : t(`Add Event`)}
             </Typography>
             <Typography mb={3} variant="subtitle2">
               {!update
