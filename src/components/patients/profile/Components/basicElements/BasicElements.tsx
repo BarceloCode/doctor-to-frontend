@@ -5,7 +5,7 @@ import BasicElementsItem from "./BasicElementsItem";
 const BasicElements = ({ entries }: any) => {
   return (
     <>
-      <div className="px-8 py-2">
+      <div className="px-4 lg:px-8 py-2">
         {entries &&
           Object?.entries(entries).map(([key, value], index: number) => {
             return (
