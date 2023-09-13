@@ -62,17 +62,17 @@ const MainProfile = ({ expedient }: any) => {
           <h2 className="font-bold text-xl block capitalize">
             gynecobstetric History
           </h2>
-          <BasicElements entries={expedient?.gynecobstetricHistory[0]} />
+          <BasicElements entries={expedient?.gynecobstetricHistory?.[0]} />
         </div>
         <div className="mt-8">
           <h2 className="font-bold text-xl block capitalize">
             habitusExteriory
           </h2>
-          <BasicElements entries={expedient?.habitusExterior[0]} />
+          <BasicElements entries={expedient?.habitusExterior?.[0]} />
         </div>
         <div className="mt-8">
           <h2 className="font-bold text-xl block capitalize">physicalExam</h2>
-          <BasicElements entries={expedient?.physicalExam[0]} />
+          <BasicElements entries={expedient?.physicalExam?.[0]} />
         </div>
       </div>
 
@@ -81,15 +81,15 @@ const MainProfile = ({ expedient }: any) => {
           <h2 className="font-bold text-xl block capitalize">
             pathological History
           </h2>
-          <BasicElements entries={expedient?.pathologicalHistory[0]} />
+          <BasicElements entries={expedient?.pathologicalHistory?.[0]} />
         </div>
         <div className="mt-8">
           <h2 className="font-bold text-xl block capitalize">previousTreatments</h2>
-          <BasicElements entries={expedient?.previousTreatments[0]} />
+          <BasicElements entries={expedient?.previousTreatments?.[0]} />
         </div>
         <div className="mt-8">
           <h2 className="font-bold text-xl block capitalize">solarProtection</h2>
-          <BasicElements entries={expedient?.solarProtection[0]} />
+          <BasicElements entries={expedient?.solarProtection?.[0]} />
         </div>
       </div>
     </div>
