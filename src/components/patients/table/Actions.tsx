@@ -17,7 +17,7 @@ const Actions = ({
           pathname: "/patients/profile/",
           query: { id: patientId },
         }}
-        sx={{ mr: "3px" }}
+        sx={{ mr: "3px", "box-shadow": "none" }}
       >
         <div style={{ cursor: "pointer", color: "#2A3547" }}>
           <IconEye width={22} />
