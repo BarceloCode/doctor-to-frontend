@@ -1,5 +1,5 @@
 import React from "react";
-import { IconPencil, IconTrashFilled } from "@tabler/icons-react";
+import { IconPencil, IconTrashFilled, IconEye } from "@tabler/icons-react";
 import { Box, Stack } from "@mui/material";
 
 const Actions = ({ onEditPattient, onDeletePattient, pattient }: any) => {
@@ -13,6 +13,13 @@ const Actions = ({ onEditPattient, onDeletePattient, pattient }: any) => {
       <Box onClick={() => onDeletePattient(pattient)} sx={{ ml: "2px" }}>
         <div style={{ cursor: "pointer" }}>
           <IconTrashFilled width={22} />
+        </div>
+      </Box>
+      <Box 
+      onClick={() => onDeletePattient(pattient)} sx={{ ml: "2px" }}
+      >
+        <div style={{ cursor: "pointer" }}>
+          <IconEye width={22} />
         </div>
       </Box>
     </Stack>
