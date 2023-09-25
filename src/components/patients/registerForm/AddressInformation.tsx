@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useMemo } from "react";
 import { Grid, MenuItem, Alert } from "@mui/material";
 import CustomTextField from "../../forms/theme-elements/CustomTextField";
 import CustomSelect from "../../forms/theme-elements/CustomSelect";
@@ -28,6 +28,7 @@ const AddressInformation = ({
   ];
 
   const { t } = useTranslation();
+
   return (
     <div>
       {/* ------------------------------------------------------------------------------------------------ */}
@@ -40,18 +41,18 @@ const AddressInformation = ({
             sx={{
               mt: 0,
             }}
-            htmlFor="street-text"
+            htmlFor="address-text"
           >
             {t(`Street`)}
           </CustomFormLabel>
 
           <CustomTextField
-            type="street"
-            name="street"
+            type="address"
+            name="address"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values?.address}
-            id="street-text"
+            id="address-text"
             variant="outlined"
             fullWidth
           />
@@ -101,17 +102,17 @@ const AddressInformation = ({
             sx={{
               mt: 0,
             }}
-            htmlFor="zipCode-text"
+            htmlFor="zipcode-text"
           >
             {t(`Post Code`)}
           </CustomFormLabel>
           <CustomTextField
-            type="zipCode"
-            name="zipCode"
+            type="zipcode"
+            name="zipcode"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values?.zipcode}
-            id="zipCode-text"
+            id="zipcode-text"
             variant="outlined"
             fullWidth
           />

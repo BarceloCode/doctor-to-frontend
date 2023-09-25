@@ -3,6 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import CustomFormLabel from "src/components/forms/theme-elements/CustomFormLabel";
 import CustomTextField from "src/components/forms/theme-elements/CustomTextField";
+import { TranslateComponent } from "src/components/shared/TranslateComponent";
 
 const ChildForm = ({
   handleChange,
@@ -16,7 +17,7 @@ const ChildForm = ({
   isOneItem = false,
 }: any) => {
   const { t } = useTranslation();
-  // console.log("render ChildForm");
+  // console.log(values, "values");
   return (
     <Grid item lg={isOneItem ? 12 : 6} md={12} sm={12} xs={12}>
       <CustomFormLabel
@@ -26,18 +27,36 @@ const ChildForm = ({
         }}
         htmlFor={`{${objKey}-text`}
       >
-        {title}
+        {t(title)}
       </CustomFormLabel>
-
-      <CustomTextField
-        type={objKey}
-        name={objKey}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        id={`{${objKey}-text`}
-        variant="outlined"
-        fullWidth
-      />
+      {objKey == "patient" ? (
+        <CustomTextField
+          disabled={true}
+          sx={{
+            "& .MuiInputBase-input.Mui-disabled": {
+              WebkitTextFillColor: "#000000",
+            },
+          }}
+          type={objKey}
+          name={objKey}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          value={values?.patient}
+          id={`{${objKey}-text`}
+          variant="outlined"
+          fullWidth
+        />
+      ) : (
+        <CustomTextField
+          type={objKey}
+          name={objKey}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          id={`{${objKey}-text`}
+          variant="outlined"
+          fullWidth
+        />
+      )}
     </Grid>
   );
 };

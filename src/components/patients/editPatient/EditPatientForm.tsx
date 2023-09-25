@@ -72,7 +72,7 @@ const EditPatientForm = ({
             // address: address,
             // name: `${values.name} ${values.lastName}`,
             name: values.name,
-            sursame: values.surname,
+            surname: values.surname,
             gender: values.gender,
             religion: values.religion,
             birthdate: values.birthdate.toString(),
@@ -83,7 +83,6 @@ const EditPatientForm = ({
             curp: values.curp,
           };
         // notifySuccess();
-        console.log("hola");
 
         updatePatient(patient, idPattient).then(function (response) {
           if (response?.success) {

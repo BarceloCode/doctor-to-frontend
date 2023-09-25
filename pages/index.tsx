@@ -5,6 +5,8 @@ import Breadcrumb from "../src/layouts/full/shared/breadcrumb/Breadcrumb";
 import PageContainer from "../src/components/container/Pagecontainer";
 import DashboardCard from "../src/components/shared/DashboardCard";
 import { useRouter } from "next/router";
+import BigCalendar from "./bookings/calendar";
+import { useEffect } from "react";
 
 const BCrumb = [
   {
@@ -17,16 +19,22 @@ const BCrumb = [
 ];
 
 export default function Home() {
-  // const router = useRouter();
+  const router = useRouter();
   // if (typeof window !== "undefined") {
   //   const id = localStorage?.getItem("id") || "";
   //   const token = localStorage?.getItem("token") || "";
-  //   console.log(id, token, "data localstorage");
+  //   // console.log(id, token, "data localstorage");
   //   // if (!id && !token) window.location = "/auth/auth1/login" as any;
   //   if (!id && !token) router.push("/auth/auth1/login");
   // }
+  const { push } = useRouter();
+
+  useEffect(() => {
+    push("/bookings/calendar");
+  }, []);
 
   return (
+    // <BigCalendar />
     <PageContainer title="Sample Page" description="this is Sample page">
       {/* breadcrumb */}
       <Breadcrumb title="Sample Page" items={BCrumb} />

@@ -22,6 +22,11 @@ const ProceedingsForm = () => {
   //HOC component
   const router = useRouter();
   const dispatch = useDispatch();
+  const { id } = router.query;
+  const cardTitle = t("Proceedings Formulary");
+
+  // console.log(id, "id");
+
   return (
     <div>
       {/* ------------------------------------------------------------------------------------------------ */}
@@ -29,94 +34,95 @@ const ProceedingsForm = () => {
       {/* ------------------------------------------------------------------------------------------------ */}
       <Formik
         initialValues={{
-          patient: "",
+          patient: id,
           familyHistory: {
-            family: "",
+            familyMember: "",
             diabetes: "",
             hypertension: "",
-            autoimmuneDiseases: "",
+            autoimmuneDiseasesF: "",
+            cancerF: "",
+            othersDiseasesF: "",
           },
 
           pathologicalHistory: {
-            diabetesMellitus: "",
+            mellitusDiabetes: "",
             arterialHypertension: "",
-            endocrinologicalDiseases: "",
-            diseasesAutoimmune: "",
+            endocrinolgicalDiseases: "",
+            psychiatricDiseases: "",
+            autoimmuneDiseases: "",
             vih: "",
-            herpes: "",
+            herpesLabialis: "",
+            herpesZoster: "",
             bloodTransfusions: "",
             trauma: "",
-            fracture: "",
+            fractures: "",
             hospitalizations: "",
             previousSurgeries: "",
             hepatitis: "",
             cancer: "",
             epilepsy: "",
             allergies: "",
-            others: "",
-            doyouSmoke: "",
-            howMany: "",
-            adictions: "",
-            whichOne: "",
-            drinkAlcohol: "",
-            alchohol: "",
+
+            evolution: "",
+            medicalTreatment: "",
             bloodPhobia: "",
             needlePhobia: "",
             fainting: "",
-            medicines: "",
-            medicineName: "",
+            takingMedication: "",
             bruises: "",
-            tanningbed: "",
-            anesthesia: "",
+            tanningBed: "",
+            localAnesthesia: "",
             anesthesiaProblems: "",
-            problem: "",
-            vaccine: "",
-            vaccineName: "",
+            vaccinationsReceived: "",
             infections: "",
-            infectionName: "",
-            medicalTreatment: "",
-            treatment: "",
-            exercise: "",
-            typeof: "",
+            medicaltreatmentReceived: "",
+            doExcerice: "",
+            followDiet: "",
+            others: "",
           },
-          gynecologistsHistory: {
+
+          adictions: {
+            doyouSmoke: "",
+            haveAddictions: "",
+            drinksAlcohol: "",
+          },
+
+          gynecobstetricHistory: {
             pregnant: "",
-            mernacaNo: "",
+            menarcaNo: "",
             fum: "",
-            menstrualrhythm: "",
+            menstrualRythim: "",
             fup: "",
             g: "",
-            p: "",
             a: "",
-            c: "",
-            contraceptivemethod: "",
+            anticonceptiveMethod: "",
           },
 
           solarProtection: {
             solarExposition: "",
-            time: "",
-            usesolarProtection: "",
+            expositionTime: "",
+            usersolarProtection: "",
             brand: "",
             fps: "",
           },
 
-          consultReason: "",
-          other: "",
+          consultReason: {
+            motive: "",
+            other: "",
+          },
+
           previousTreatments: {
             procedure: "",
             product: "",
-            applicationDate: "",
+            date: new Date().toISOString().split("T")[0],
           },
 
           physicalExam: {
-            flitzpatrick: "",
+            fitzpatrick: "",
             glogau: "",
-            typeSkin: "",
-            typeFace: "",
-            dermatologicallesions: "",
-            lesion: "",
-            lesionType: "",
-            location: "",
+            skinType: "",
+            faceType: "",
+            dermatologicalLesions: "",
           },
 
           habitusExterior: {
@@ -127,14 +133,15 @@ const ProceedingsForm = () => {
             facies: "",
             anormalMovements: "",
             gear: "",
-            consciousness: "",
-            others: "",
+            stateofConsciousness: "",
+            notes: "",
           },
 
           vitalSigns: {
             fc: "",
+            fr: "",
             ta: "",
-            temp: "",
+            temperature: "",
             weight: "",
             size: "",
             imc: "",
@@ -145,8 +152,125 @@ const ProceedingsForm = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
+          dispatch(setLoadder(true));
           // console.log(values, "values");
-          storeProcedding(values).then(function (response) {
+          const data = {
+            patient: values.patient,
+            familyHistory: {
+              familyMember: (values as any)?.familyMember,
+              diabetes: (values as any)?.diabetes,
+              hypertension: (values as any)?.hypertension,
+              autoimmuneDiseasesF: (values as any)?.autoimmuneDiseasesF,
+              cancerF: (values as any)?.cancerF,
+              othersDiseasesF: (values as any)?.othersDiseasesF,
+            },
+
+            pathologicalHistory: {
+              mellitusDiabetes: (values as any)?.mellitusDiabetes,
+              arterialHypertension: (values as any)?.arterialHypertension,
+              endocrinolgicalDiseases: (values as any)?.endocrinolgicalDiseases,
+              psychiatricDiseases: (values as any)?.psychiatricDiseases,
+              autoimmuneDiseases: (values as any)?.autoimmuneDiseases,
+              vih: (values as any)?.vih,
+              herpesLabialis: (values as any)?.herpesLabialis,
+              herpesZoster: (values as any)?.herpesZoster,
+              bloodTransfusions: (values as any)?.bloodTransfusions,
+              trauma: (values as any)?.trauma,
+              fractures: (values as any)?.fractures,
+              hospitalizations: (values as any)?.hospitalizations,
+              previousSurgeries: (values as any)?.previousSurgeries,
+              hepatitis: (values as any)?.hepatitis,
+              cancer: (values as any)?.cancer,
+              epilepsy: (values as any)?.epilepsy,
+              allergies: (values as any)?.allergies,
+
+              evolution: (values as any)?.evolution,
+              medicalTreatment: (values as any)?.medicalTreatment,
+              bloodPhobia: (values as any)?.bloodPhobia,
+              needlePhobia: (values as any)?.needlePhobia,
+              fainting: (values as any)?.fainting,
+              takingMedication: (values as any)?.takingMedication,
+              bruises: (values as any)?.bruises,
+              tanningBed: (values as any)?.tanningBed,
+              localAnesthesia: (values as any)?.localAnesthesia,
+              anesthesiaProblems: (values as any)?.anesthesiaProblems,
+              vaccinationsReceived: (values as any)?.vaccinationsReceived,
+              infections: (values as any)?.infections,
+              medicaltreatmentReceived: (values as any)
+                ?.medicaltreatmentReceived,
+              doExcerice: (values as any)?.doExcerice,
+              followDiet: (values as any)?.followDiet,
+              others: (values as any)?.followDiet,
+            },
+
+            adictions: {
+              doyouSmoke: (values as any)?.doyouSmoke,
+              haveAddictions: (values as any)?.haveAddictions,
+              drinksAlcohol: (values as any)?.drinksAlcohol,
+            },
+
+            gynecobstetricHistory: {
+              pregnant: (values as any)?.pregnant,
+              menarcaNo: (values as any)?.menarcaNo,
+              fum: (values as any)?.fum,
+              menstrualRythim: (values as any)?.menstrualRythim,
+              fup: (values as any)?.fup,
+              g: (values as any)?.g,
+              a: (values as any)?.a,
+              anticonceptiveMethod: (values as any)?.anticonceptiveMethod,
+            },
+
+            solarProtection: {
+              solarExposition: (values as any)?.solarExposition,
+              expositionTime: (values as any)?.expositionTime,
+              usersolarProtection: (values as any)?.usersolarProtection,
+              brand: (values as any)?.brand,
+              fps: (values as any)?.fps,
+            },
+
+            consultReason: {
+              motive: (values as any)?.motive,
+              other: (values as any)?.other,
+            },
+
+            previousTreatments: {
+              procedure: (values as any)?.procedure,
+              product: (values as any)?.product,
+              date: (values as any)?.date,
+            },
+
+            physicalExam: {
+              fitzpatrick: (values as any)?.fitzpatrick,
+              glogau: (values as any)?.glogau,
+              skinType: (values as any)?.skinType,
+              faceType: (values as any)?.faceType,
+              dermatologicalLesions: (values as any)?.dermatologicalLesions,
+            },
+
+            habitusExterior: {
+              patientCondition: (values as any)?.patientCondition,
+              constitution: (values as any)?.constitution,
+              conformation: (values as any)?.conformation,
+              attitude: (values as any)?.attitude,
+              facies: (values as any)?.facies,
+              anormalMovements: (values as any)?.anormalMovements,
+              gear: (values as any)?.gear,
+              stateofConsciousness: (values as any)?.stateofConsciousness,
+              notes: (values as any)?.notes,
+            },
+
+            vitalSigns: {
+              fc: (values as any)?.fc,
+              fr: (values as any)?.fr,
+              ta: (values as any)?.ta,
+              temperature: (values as any)?.temperature,
+              weight: (values as any)?.weight,
+              size: (values as any)?.size,
+              imc: (values as any)?.imc,
+            },
+          };
+          storeProcedding(data).then(function (response) {
+            // storeProcedding(values).then(function (response) {
             // console.log(response, "responsea");
             if (response?.success) {
               dispatch(setLoadder(false));
@@ -183,7 +307,7 @@ const ProceedingsForm = () => {
           isValid,
         }) => (
           <ParentCard
-            title="Proceedings Formulary"
+            title={cardTitle}
             footer={
               <>
                 <Button
@@ -192,7 +316,7 @@ const ProceedingsForm = () => {
                   color="primary"
                   disabled={!(dirty && isValid)}
                 >
-                  Submit
+                  {t(`Submit`)}
                 </Button>
                 <Button
                   variant="contained"
@@ -201,7 +325,7 @@ const ProceedingsForm = () => {
                     ml: 1,
                   }}
                 >
-                  Cancel
+                  {t(`Cancel`)}
                 </Button>
               </>
             }

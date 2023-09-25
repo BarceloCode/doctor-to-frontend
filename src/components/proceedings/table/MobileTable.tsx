@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Actions from "./Actions";
-import PattientProfile from "../profile/PattientProfile";
 
 const MobileTable = ({
   patients,
@@ -92,11 +91,11 @@ const MobileTable = ({
                   patientId={pattient?._id}
                 />
               </TableCell>
-              <PattientProfile
+              {/* <PattientProfile
                 pattient={pattient}
                 open={open}
                 setOpen={setOpen}
-              />
+              /> */}
             </TableRow>
           ))}
       </TableBody>

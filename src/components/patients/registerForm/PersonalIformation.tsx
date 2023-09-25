@@ -3,6 +3,7 @@ import CustomTextField from "../../forms/theme-elements/CustomTextField";
 import CustomSelect from "../../forms/theme-elements/CustomSelect";
 import CustomFormLabel from "../../forms/theme-elements/CustomFormLabel";
 import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
 
 const PersonalIformation = ({
   handleChange,
@@ -15,46 +16,41 @@ const PersonalIformation = ({
   const genders = [
     {
       value: "Female",
-      label: "Female",
+      label: t(`Female`),
     },
     {
       value: "Male",
-      label: "Male",
+      label: t(`Male`),
     },
     {
       value: "Other",
-      label: "Other",
+      label: t(`Other`),
     },
   ];
   const maritalStus = [
     {
       value: "Singles",
-      label: "Singles",
+      label: t(`Singles`),
     },
     {
       value: "Married",
-      label: "Married",
+      label: t(`Married`),
     },
     {
       value: "Widower",
-      label: "Widower",
+      label: t(`Widower`),
     },
     {
-      value: "Free-Union",
-      label: "Free Union",
+      value: "Free Union",
+      label: t(`Free Union`),
     },
     {
-      value: "divorced",
-      label: "Divorced",
+      value: "Divorced",
+      label: t(`Divorced`),
     },
   ];
-  // console.clear();
-  // console.log(values, "values");
-
   return (
     <div>
-      {/* {values.name}
-      {values._id} */}
       {/* ------------------------------------------------------------------------------------------------ */}
       {/* Patient iformation */}
       {/* ------------------------------------------------------------------------------------------------ */}
@@ -133,17 +129,17 @@ const PersonalIformation = ({
           />
         </Grid>
         <Grid item lg={6} md={12} sm={12} xs={12}>
-          <CustomFormLabel htmlFor="lastName-text">
+          <CustomFormLabel htmlFor="surname-text">
             {t(`Last Name`)}
           </CustomFormLabel>
 
           <CustomTextField
-            type="lastName"
-            name="lastName"
+            type="surname"
+            name="surname"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values?.surname}
-            id="lastName-text"
+            id="surname-text"
             variant="outlined"
             fullWidth
           />
