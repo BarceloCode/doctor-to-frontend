@@ -32,8 +32,8 @@ const PatientsListTable = ({ patients }: any) => {
     // setPattientID(patientId);
     // console.log("on edit");
   };
-  const onDeletePattient = async (id: any) => {
-    const response = await deletePatient(id);
+  const onDeletePattient = async (pattient: any) => {
+    const response = await deletePatient(pattient?._id);
     if (response?.response?.status == 200) {
       console.log(response, "response");
       dispatch(setLoadder(false));

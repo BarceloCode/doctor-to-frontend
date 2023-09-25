@@ -33,6 +33,13 @@ const Actions = ({
           <IconTrashFilled width={22} />
         </div>
       </Box>
+      <Box 
+      onClick={() => onDeletePattient(pattient)} sx={{ ml: "2px" }}
+      >
+        <div style={{ cursor: "pointer" }}>
+          <IconEye width={22} />
+        </div>
+      </Box>
     </Stack>
   );
 };
