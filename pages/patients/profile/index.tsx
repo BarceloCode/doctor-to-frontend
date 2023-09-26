@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { getProceeding } from "src/services/Proceedings";
 import { CircularProgress, Stack } from "@mui/material";
+import ProfileTabs from "src/components/patients/profile/ProfileTabs";
 
 const index = () => {
   const { t } = useTranslation();
@@ -46,10 +47,14 @@ const index = () => {
           title={t(`${"Patient Profile"}`) as string}
           items={BCrumPatients}
         />
-        <DashboardCard title={t(`${"Patient details"}`) as string}>
+        <DashboardCard
+          bigCard={true}
+          title={t(`${"Patient details"}`) as string}
+        >
           {!loadding ? (
             <>
-              <MainProfile expedient={expedient} />
+              {/* <MainProfile expedient={expedient} /> */}
+              <ProfileTabs />
             </>
           ) : (
             <Stack alignItems="center">

@@ -9,7 +9,7 @@ const Logo = () => {
   const customizer = useSelector((state: AppState) => state.customizer);
   const LinkStyled = styled(Link)(() => ({
     height: customizer.TopbarHeight,
-    width: customizer.isCollapse ? "40px" : "180px",
+    width: customizer.isCollapse ? "40px" : "411px",
     overflow: "hidden",
     display: "block",
   }));
@@ -18,9 +18,9 @@ const Logo = () => {
     return (
       <LinkStyled href="/">
         {customizer.activeMode === "dark" ? (
-          <Typography  mt={3} variant="h2" component="h2">
-            USC Clinic
-          </Typography>
+          // <Typography  mt={3} variant="h2" component="h2">
+          //   USC Clinic
+          // </Typography>
           // <Image
           //   src="/images/logos/light-logo.svg"
           //   alt="logo"
@@ -28,17 +28,34 @@ const Logo = () => {
           //   width={174}
           //   priority
           // />
+
+                    <Image
+            src="/images/logos/logo.png"
+            alt="logo"
+            height={customizer.TopbarHeight}
+            width={411}
+            priority
+          />
+
         ) : (
-          <Typography mt={3} variant="h2" component="h2">
-            USC Clinic
-          </Typography>
+          // <Typography mt={3} variant="h2" component="h2">
+          //   USC Clinic
+          // </Typography>
           // <Image
           //   src={"/images/logos/dark-logo.svg"}
           //   alt="logo"
           //   height={customizer.TopbarHeight}
-          //   width={174}
+          //   width={411}
           //   priority
           // />
+
+          <Image
+          src="/images/logos/logo.png"
+          alt="logo"
+          height={customizer.TopbarHeight}
+          width={411}
+          priority
+        />
         )}
       </LinkStyled>
     );
@@ -47,27 +64,43 @@ const Logo = () => {
   return (
     <LinkStyled href="/">
       {customizer.activeMode === "dark" ? (
-        <Typography mt={3} variant="h2" component="h2">
-          USC Clinic
-        </Typography>
+        // <Typography mt={3} variant="h2" component="h2">
+        //   USC Clinic
+        // </Typography>
         // <Image
         //   src="/images/logos/dark-rtl-logo.svg"
         //   alt="logo"
         //   height={customizer.TopbarHeight}
-        //   width={174}
+        //   width={411}
         //   priority
         // />
+
+        <Image
+        src="/images/logos/logo.png"
+        alt="logo"
+        height={customizer.TopbarHeight}
+        width={411}
+        priority
+      />
       ) : (
-        <Typography mt={3} variant="h2" component="h2">
-          USC Clinic
-        </Typography>
+        // <Typography mt={3} variant="h2" component="h2">
+        //   USC Clinic
+        // </Typography>
         // <Image
         //   src="/images/logos/light-logo-rtl.svg"
         //   alt="logo"
         //   height={customizer.TopbarHeight}
-        //   width={174}
+        //   width={411}
         //   priority
         // />
+
+        <Image
+        src="/images/logos/logo.png"
+        alt="logo"
+        height={customizer.TopbarHeight}
+        width={411}
+        priority
+      />
       )}
     </LinkStyled>
   );

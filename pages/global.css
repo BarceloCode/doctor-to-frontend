@@ -13,6 +13,10 @@
     overflow: hidden;
 }
 
+.mui-style-mh6579-MuiContainer-root {
+    max-width: 100vw;
+}
+
 /* Make button bar transparent */
 /* .mui-style-16lloyr-MuiBottomNavigation-root {
     background: transparent !important;
@@ -30,8 +34,9 @@
 
 .mui-style-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
     /* background: transparent!important; */
-    background: rgb(128,128,128, 0.2)
+    background: rgb(128, 128, 128, 0.2)
 }
+
 /* Responsive table */
 /* .mui-style-5plflh-MuiTableCell-root {
     min-width: unset !important
