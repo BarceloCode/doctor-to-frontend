@@ -17,7 +17,7 @@ type Props = {
   headsubtitle?: string | JSX.Element;
   children?: JSX.Element;
   middlecontent?: string | JSX.Element;
-  bigCard: boolean | any;
+  bigCard?: boolean | any;
 };
 
 const DashboardCard = ({
