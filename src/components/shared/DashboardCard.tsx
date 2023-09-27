@@ -47,7 +47,8 @@ const DashboardCard = ({
           border: !customizer.isCardShadow
             ? `1px solid ${borderColor}`
             : "none",
-          width: bigCard ? "100%" : "75%",
+          // width: bigCard ? "100%" : "80%",
+          maxWidth: bigCard ? "100%" : "1200px",
           marginX: bigCard ? "0" : "auto!important",
           // maxWidth: "100vw",
         }}
