@@ -49,14 +49,14 @@ const Login = () => {
                 },
               }}
             >
-              <img
+              {/* <img
                 src={"/images/backgrounds/login-bg.svg"}
                 alt="bg"
                 style={{
                   width: "100%",
                   maxWidth: "500px",
                 }}
-              />
+              /> */}
             </Box>
           </Box>
         </Grid>

@@ -8,14 +8,19 @@ import Image from "next/image";
 const Logo = () => {
   const customizer = useSelector((state: AppState) => state.customizer);
   const LinkStyled = styled(Link)(() => ({
-    height: customizer.TopbarHeight,
-    width: customizer.isCollapse ? "40px" : "411px",
+    height: customizer.activeDir === "ltr" ? "78px" : customizer.TopbarHeight,
+    width: customizer.isCollapse
+      ? "40px"
+      : customizer.activeDir === "ltr"
+      ? "206px"
+      : "411px",
     overflow: "hidden",
     display: "block",
   }));
 
   if (customizer.activeDir === "ltr") {
     return (
+      // <div style={{ maxWidth: "206px" }}>
       <LinkStyled href="/">
         {customizer.activeMode === "dark" ? (
           // <Typography  mt={3} variant="h2" component="h2">
@@ -29,14 +34,13 @@ const Logo = () => {
           //   priority
           // />
 
-                    <Image
+          <Image
             src="/images/logos/logo.png"
             alt="logo"
-            height={customizer.TopbarHeight}
-            width={411}
+            height={78}
+            width={206}
             priority
           />
-
         ) : (
           // <Typography mt={3} variant="h2" component="h2">
           //   USC Clinic
@@ -44,20 +48,21 @@ const Logo = () => {
           // <Image
           //   src={"/images/logos/dark-logo.svg"}
           //   alt="logo"
-          //   height={customizer.TopbarHeight}
-          //   width={411}
+          //   height={78}
+          //   width={200}
           //   priority
           // />
 
           <Image
-          src="/images/logos/logo.png"
-          alt="logo"
-          height={customizer.TopbarHeight}
-          width={411}
-          priority
-        />
+            src="/images/logos/logo.png"
+            alt="logo"
+            height={78}
+            width={206}
+            priority
+          />
         )}
       </LinkStyled>
+      // </div>
     );
   }
 
@@ -76,12 +81,12 @@ const Logo = () => {
         // />
 
         <Image
-        src="/images/logos/logo.png"
-        alt="logo"
-        height={customizer.TopbarHeight}
-        width={411}
-        priority
-      />
+          src="/images/logos/logo.png"
+          alt="logo"
+          height={customizer.TopbarHeight}
+          width={411}
+          priority
+        />
       ) : (
         // <Typography mt={3} variant="h2" component="h2">
         //   USC Clinic
@@ -95,12 +100,12 @@ const Logo = () => {
         // />
 
         <Image
-        src="/images/logos/logo.png"
-        alt="logo"
-        height={customizer.TopbarHeight}
-        width={411}
-        priority
-      />
+          src="/images/logos/logo.png"
+          alt="logo"
+          height={customizer.TopbarHeight}
+          width={411}
+          priority
+        />
       )}
     </LinkStyled>
   );
